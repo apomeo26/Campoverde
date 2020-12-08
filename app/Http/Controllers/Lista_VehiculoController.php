@@ -97,23 +97,16 @@ class Lista_VehiculoController extends Controller
     public function store(Request $request)
     {
 
-       $query = trim($request->get('habitantes_id'));
+       $query = trim($request->get('documento'));
         $placaVehi = $request->get('placaVehi');
 
         //validar que el propietario este registrado
 
-        $profession = habitante::select('nombre','apellidos')
-            ->where('nombre', '=', $query)->first();
+        $profession = habitante::select('id')
+            ->where('numero_identificacion', '=', $query)->first();
 
-        $vehiculoL = new Lista_vehiculo();
-        $vehiculoL->habitantes_id =$request->get('habitantes_id');
-        $vehiculoL->tipo_vehiculo = $request->get('tipoVehi');
-        $vehiculoL->modelo = $request->get('modeloVehi');
-        $vehiculoL->placa = $request->get('placaVehi');
-        $vehiculoL->save();
-        return Redirect::to('Lista_vehiculo');
 
-/*        $id_h = $profession;
+        $id_h = $profession;
 
 
         if (strlen($id_h) == 0) {
@@ -166,7 +159,7 @@ class Lista_VehiculoController extends Controller
                   window.location.href="Lista_vehiculo/create";
                       </script>';
             }
-        }*/
+        }
     }
 
     /**
