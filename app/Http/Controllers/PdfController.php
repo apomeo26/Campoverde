@@ -44,7 +44,7 @@ class PdfController extends Controller
     }
 
 
-    public function imprimirFacturas ($id)
+    public function imprimirFacturas (Request $request, $id)
     {
         $request->user()->authorizeRoles('admin');
         $facturas = DB::table('facturas')

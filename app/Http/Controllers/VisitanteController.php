@@ -90,7 +90,8 @@ class VisitanteController extends Controller
     public function edit($id)
     {
         $visitante = Visitante::findOrFail($id);
-        return view("visitante.edit", ["visitantes" => $visitante]);
+        $ap = apartamento::all();
+        return view("visitante.edit", ["visitantes" => $visitante, "apartamento" => $ap]);
     }
 
     /**
@@ -109,6 +110,7 @@ class VisitanteController extends Controller
         $visitante->numero_identificacion = $request->get('numero_identificacion');
         $visitante->temperatura = $request->get('temperatura');
         $visitante->fecha_visita = $request->get('fecha_visita');
+        $visitante->apartamento_id= $request->get('apartamento_id');
         $visitante->update();
         return Redirect::to('visitante');
     }
