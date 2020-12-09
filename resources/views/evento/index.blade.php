@@ -19,22 +19,22 @@
         <div class="table-responsive">
             <table class="table table-striped table-hover">
                 <thead>
-                    <th>Id</th>
                     <th>Tipo</th>
                     <th>Descripción</th>
                     <th>Estado</th>
                     <th>Fecha de registro</th>
+                    <th>Fecha de finalización</th>
                     <th>Responsable</th>
                     <th width="180">Opciones</th>
                 </thead>
                 <tbody>
                     @foreach($eventos as $evento)
                     <tr>
-                        <td>{{$evento->id}}</td>
                         <td>{{$evento->tipo}}</td>
                         <td>{{$evento->descripcion}}</td>
                         <td>{{$evento->estado}}</td>
                         <td>{{$evento->fecha_registro}}</td>
+                        <td>{{$evento->fecha_finalizacion}}</td>
                         <td>{{$evento->habitantes->nombre}} {{$evento->habitantes->apellidos}}</td>
                         <td>
                             <a href="{{URL::action('EventoController@edit',$evento->id)}}"><button class="btn btn-primary">Actualizar</button></a>

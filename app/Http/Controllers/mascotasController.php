@@ -25,7 +25,7 @@ class mascotasController extends Controller
         if ($request) {
             $query = trim($request->get('searchText'));
 
-            $mascotas = Mascota::where('id', 'LIKE', '%' . $query . '%')
+            $mascotas = Mascota::orwhere('nombre', 'LIKE', '%' . $query . '%')
                 ->orderBy('id', 'ASC')->paginate(3);
             return view('mascota.index', ["mascotas" => $mascotas, "searchText" => $query]);
         }

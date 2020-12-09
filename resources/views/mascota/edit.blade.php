@@ -18,31 +18,31 @@
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <div class="form-group"> <br>
             <label for="tipo">Tipo</label>
-            <input type="text" name="tipo" id="tipo" class="form-control" value="{{$mascotas->tipo}}">
+            <input type="text" name="tipo" id="tipo" class="form-control" value="{{$mascotas->tipo}}" maxlength="50" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}" title="Solo Letras" required>
         </div>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <div class="form-group"> <br>
             <label for="raza">Raza</label>
-            <input type="text" name="raza" id="raza" class="form-control" value="{{$mascotas->raza}}">
+            <input type="text" name="raza" id="raza" class="form-control" value="{{$mascotas->raza}}" maxlength="50" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}" title="Solo Letras" required>
         </div>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <div class="form-group"> <br>
             <label for="nombre">Nombre</label>
-            <input type="text" name="nombre" id="nombre" class="form-control" value="{{$mascotas->nombre}}">
+            <input type="text" name="nombre" id="nombre" class="form-control" value="{{$mascotas->nombre}}" maxlength="50" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}" title="Solo Letras" required>
         </div>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <div class="form-group"> <br>
             <label for="color">Color</label>
-            <input type="text" name="color" id="color" class="form-control" value="{{$mascotas->color}}">
+            <input type="text" name="color" id="color" class="form-control" value="{{$mascotas->color}}" maxlength="50" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}" title="Solo Letras" required>
         </div>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <div class="form-group">
             <label for="Role">Responsable</label>
-            <select name="habitantes_id" id="habitantes_id" class="form-control selectpicker" data-livesearch="true">
+            <select name="habitantes_id" id="habitantes_id" class="form-control selectpicker" data-livesearch="true" required>
                 <option value="" diseable selected >Responsable:</option>
                 @foreach($habitantes as $habitante)
                 <option value="{{$habitante->id}}"> {{$habitante->nombre}} - {{$habitante->apellidos}}

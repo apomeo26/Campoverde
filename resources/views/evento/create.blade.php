@@ -20,7 +20,7 @@
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <div class="form-group">
             <br><label for="tipo">Tipo</label>
-            <select name="tipo" id="tipo" class="form-control">
+            <select name="tipo" id="tipo" class="form-control" required>
                 <option value="" disabled selected>Elija el evento:</option>
                 <option>Fiesta</option>
                 <option>Reunión</option>
@@ -31,14 +31,14 @@
         <div class="form-group">
             <br>
             <label for="descripcion">Descripción</label>
-            <input type="text" name="descripcion" id="descripcion" class="form-control" placeholder="Ingrese una descripción" >
+            <input type="text" name="descripcion" id="descripcion" class="form-control" placeholder="Ingrese una descripción" maxlength="200" required>
         </div>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <div class="form-group">
             <br>
             <label for="estado">Estado</label>
-            <select name="estado" id="estado" class="form-control">
+            <select name="estado" id="estado" class="form-control" required>
                 <option value="" disabled selected>Elija el estado:</option>
                 <option>Activo</option>
                 <option>Inactivo</option>
@@ -49,15 +49,21 @@
         <div class="form-group">
             <br>
             <label for="fecha_registro">Fecha de registro</label>
-            <input type="date" name="fecha_registro" id="fecha_registro" class="form-control">
+            <input type="text" name="fecha_registro" id="fecha_registro" class="form-control" value="{{date('Y-m-d H:i:s') }}" required>
         </div>
     </div>
-
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <div class="form-group">
+            <br>
+            <label for="fecha_finalizacion">Fecha de finalización</label>
+            <input type="date" name="fecha_finalizacion" id="fecha_finalizacion" class="form-control" required>
+        </div>
+    </div>
    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <div class="form-group">
         <br>
             <label for="Role">Responsable</label>
-            <select name="habitantes_id" id="habitantes_id" class="form-control selectpicker" data-livesearch="true">
+            <select name="habitantes_id" id="habitantes_id" class="form-control selectpicker" data-livesearch="true" required>
                 <option value="" disabled selected>Responsable:</option>
                 @foreach($habitantes as $habitante)
                 <option value="{{$habitante->id}}"> {{$habitante->nombre}} {{$habitante->apellidos}}

@@ -276,7 +276,7 @@ desired effect
           <li><a href="{{url('mascota')}}"><i class="fa fa-paw" aria-hidden="true"></i>Mascotas</a></li>
           <li><a href="{{url('empleado')}}"><i class="fa fa-suitcase" aria-hidden="true"></i>Empleados</a></li>
           <li><a href="{{url('habitante')}}"><i class="fa fa-group" aria-hidden="true"></i>Habitantes</a></li>
-          <li><a href="{{url('visitante')}}"><i class="fa fa-male" aria-hidden="true"></i>Visitante</a></li>
+          <li><a href="{{url('visitante')}}"><i class="fa fa-male" aria-hidden="true"></i>Visitantes</a></li>
           <li><a href="{{url('Lista_vehiculo')}}"><i class="fa fa-automobile" aria-hidden="true"></i>Vehiculos</a></li>
           <li><a href="{{url('parqueadero')}}"><i class="fa fa-road" aria-hidden="true"></i>Parqueadero</a></li>
           <li><a href="{{url('multa')}}"><i class="fa fa-money" aria-hidden="true"></i>Multas</a></li>

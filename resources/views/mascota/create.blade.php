@@ -20,31 +20,31 @@
 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
     <div class="form-group">
         <br><label for="tipo">Tipo</label>
-        <input type="text" name="tipo" id="tipo" class="form-control" placeholder="Tipo">
+        <input type="text" name="tipo" id="tipo" class="form-control" placeholder="Tipo" maxlength="50" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}" title="Solo Letras" required>
     </div>
 </div>
 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
     <div class="form-group">
         <br><label for="raza">Raza</label>
-        <input type="text" name="raza" id="raza" class="form-control" placeholder="Raza">
+        <input type="text" name="raza" id="raza" class="form-control" placeholder="Raza" maxlength="50" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}" title="Solo Letras" required>
     </div>
 </div>
 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
     <div class="form-group">
         <br> <label for="nombre">Nombre</label>
-        <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Nombre">
+        <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Nombre" maxlength="50" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}" title="Solo Letras" required>
     </div>
 </div>
 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
     <div class="form-group">
         <br> <label for="color">Color</label>
-        <input type="text" name="color" id="color" class="form-control" placeholder="Color">
+        <input type="text" name="color" id="color" class="form-control" placeholder="Color" maxlength="50" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}" title="Solo Letras" required>
     </div>
 </div>
 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <div class="form-group">
             <label for="Role">Responsable</label>
-            <select name="habitantes_id" id="habitantes_id" class="form-control selectpicker" data-livesearch="true">
+            <select name="habitantes_id" id="habitantes_id" class="form-control selectpicker" data-livesearch="true" required>
                 <option value="" disabled selected>Responsable:</option>
                 @foreach($habitantes as $habitante)
                 <option value="{{$habitante->id}}"> {{$habitante->nombre}} {{$habitante->apellidos}}

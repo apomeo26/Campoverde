@@ -67,7 +67,7 @@ class ParqueaderoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ParqueaderoCreateRequest $request)
     {
         $query = trim($request->get('placa'));
         $parqueadero = new parqueadero;

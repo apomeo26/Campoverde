@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\HabitantesCreateRequest;
 use App\apartamento;
 use App\detalle_habitantes;
 use Illuminate\Http\Request;
@@ -81,7 +82,7 @@ class HabitantesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(HabitantesCreateRequest $request)
     {
         $request->user()->authorizeRoles('admin');
 

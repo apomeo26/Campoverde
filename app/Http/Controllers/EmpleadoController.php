@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Empleado;
 use App\Zona;
 use Illuminate\Support\Facades\Redirect;
+use App\Http\Requests\EmpleadoCreateRequest;
 
 class EmpleadoController extends Controller
 {
@@ -53,7 +54,7 @@ class EmpleadoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(EmpleadoCreateRequest $request)
     {
         $request->user()->authorizeRoles('admin');
         $empleado = new Empleado;

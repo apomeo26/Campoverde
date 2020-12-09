@@ -16,73 +16,72 @@
 </div>
 {!!Form::open(array('url'=>'habitante','method'=>'POST','autocomplete'=>'off'))!!}
 {{Form::token()}}
-<div class="row">
+    <div class="row">
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <div class="form-group">
             <br>
             <label for="nombre">Nombre</label>
-            <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Nombre">
+            <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Nombre" maxlength="45" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}" title="Solo Letras" required>
         </div>
     </div>
-    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+    <div class=" col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <div class="form-group">
             <br>
             <label for="apellidos">Apellidos</label>
-            <input type="text" name="apellidos" id="apellidos" class="form-control" placeholder="Apellidos">
+            <input type="text" name="apellidos" id="apellidos" class="form-control" placeholder="Apellidos" maxlength="45" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}" title="Solo Letras" required>
         </div>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <div class="form-group">
             <br>
             <label for="tipo_documento">Tipo de Documento</label>
-            <select name="tipo_documento" id="tipo_documento" class="form-control">
-                <option value="" disabled selected>Eliga el tipo de documento:</option>
-                <option>CC</option>
-                <option>TI</option>
-                <option>RC</option>
+            <select name="tipo_documento" id="tipo_documento" class="form-control" required>
+                <option value="" disabled selected>Eliga el tipo de Documento:</option>
+                <option>Cedula Ciudadania</option>
+                <option>Tarjeta de Identidad</option>
             </select>
         </div>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <div class="form-group">
             <br>
-            <label for="numero_identificacion">Número de Documento</label>
-            <input type="number" name="numero_identificacion" id="numero_identificacion" class="form-control" placeholder="Digite el número de documento" maxlength="11">
+            <label for="numero_identificacion">Numero de Documento</label>
+            <input type="text" name="numero_identificacion" id="numero_identificacion" class="form-control" placeholder="Digite el número de Documento" minlength="8" maxlength="10" pattern="[0-9]+" title="Solo Numeros" required>
         </div>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <div class="form-group">
             <br>
-            <label for="telefono">Teléfono Fijo</label>
-            <input type="number" name="telefono_fijo" id="telefono_fijo" class="form-control" placeholder="Ingrese el teléfono">
+            <label for="telefono">Telefono Fijo</label>
+            <input type="text" name="telefono_fijo" id="telefono_fijo" class="form-control" placeholder="Digite telefono del Habitante" minlength="7" maxlength="7" pattern="[0-9]+" title="Solo Numeros" required>
         </div>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <div class="form-group">
             <br>
             <label for="telefono">Telefono celular</label>
-            <input type="number" name="telefono_celular" id="telefono" class="form-control" placeholder="Ingrese el número celular">
+            <input type="text" name="telefono_celular" id="telefono" class="form-control" placeholder="Digite telefono celular del Habitante" minlength="10" maxlength="10" pattern="[0-9]+" title="Solo Numeros" required>
         </div>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <div class="form-group">
             <br>
             <label for="correo">Correo electronico</label>
-            <input type="email" name="correo" id="correo" class="form-control" placeholder="Digite correo electronico">
+            <input type="email" name="correo" id="correo" class="form-control" placeholder="Digite correo electronico" maxlength="45" required>
         </div>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <div class="form-group">
             <br>
             <label for="fecha_registro">Fecha de Registro</label>
-            <input type="date" name="fecha_registro" class="form-control">
+            <input type="date" name="fecha_registro" class="form-control" required>
         </div>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <div class="form-group">
             <br>
             <label for="estado_vigencia">Estado</label>
-            <select name="estado_vigencia" id="estado_vigencia" class="form-control">
+            <select name="estado_vigencia" id="estado_vigencia" class="form-control" required>
                 <option value="" disabled selected>Eliga el estado:</option>
                 <option>Activo</option>
                 <option>Inactivo</option>
@@ -93,7 +92,7 @@
         <div class="form-group">
             <br>
             <label for="tipo_habitante">Tipo de Habitante</label>
-            <select name="tipo_habitante" id="tipo_habitante" class="form-control">
+            <select name="tipo_habitante" id="tipo_habitante" class="form-control" required>
                 <option value="" disabled selected>Eliga el tipo de habitante:</option>
                 <option>Propietario</option>
                 <option>Propietario/Residente</option>

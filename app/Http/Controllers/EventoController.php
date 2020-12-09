@@ -22,10 +22,11 @@ class EventoController extends Controller
     }
     public function index(Request $request)
     {
+        $request->user()->authorizeRoles('admin');
       if ($request) {
             $query = trim($request->get('searchText'));
 
-            $eventos = Evento::where('id', 'LIKE', '%' . $query . '%')
+            $eventos = Evento::orwhere('tipo', 'LIKE', '%' . $query . '%')
             ->orderBy('id', 'ASC')->paginate(8);
             return view('evento.index', ["eventos" => $eventos, "searchText" => $query]);
         }
@@ -41,7 +42,7 @@ class EventoController extends Controller
      */
     public function create(Request $request)
     {
-        
+        $request->user()->authorizeRoles('admin');
         $habitantes = Habitante::orderBy('id', 'DESC')
         ->select('habitantes.id', 'habitantes.nombre','habitantes.apellidos')
         ->get();
@@ -57,6 +58,7 @@ class EventoController extends Controller
      */
     public function store(Request $request)
     {
+        $request->user()->authorizeRoles('admin');
         $eventos = new Evento;
         $eventos->tipo = $request->get('tipo');
         $eventos->descripcion = $request->get('descripcion');
@@ -85,8 +87,9 @@ class EventoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request, $id)
     {
+        $request->user()->authorizeRoles('admin');
         $eventos = Evento::findOrFail($id);
         $habitantes = Habitante::orderBy('id', 'DESC')
         ->select('id', 'nombre', 'apellidos')
@@ -103,6 +106,7 @@ class EventoController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->user()->authorizeRoles('admin');
         $eventos = Evento::findOrFail($id);
         $eventos->tipo = $request->get('tipo');
         $eventos->descripcion = $request->get('descripcion');
@@ -119,8 +123,9 @@ class EventoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
+        $request->user()->authorizeRoles('admin');
         $eventos = Evento::findOrFail($id);
         $eventos->delete();
         return Redirect::to('evento');

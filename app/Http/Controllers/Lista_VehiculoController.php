@@ -99,7 +99,7 @@ class Lista_VehiculoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Lista_vehiculoCreateRequest $request)
     {
         $request->user()->authorizeRoles('admin');
        $query = trim($request->get('documento'));
@@ -198,7 +198,7 @@ class Lista_VehiculoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Lista_vehiculoEditRequest  $request, $id)
     {
         $request->user()->authorizeRoles('admin');
         $query = $request->get('placaVehi');

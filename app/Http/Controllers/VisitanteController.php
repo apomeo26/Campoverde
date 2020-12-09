@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Visitante;
 use App\Apartamento;
 use Illuminate\Support\Facades\Redirect;
+use App\Http\Requests\VisitantesCreateRequest;
 
 class VisitanteController extends Controller
 {
@@ -55,7 +56,7 @@ class VisitanteController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(VisitantesCreateRequest $request)
     {
         $visitante = new Visitante;
         $visitante->nombre = $request->get('nombre');

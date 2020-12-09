@@ -77,7 +77,7 @@ class Detalle_facturaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(MultaCreateRequest $request)
     {
         $request->user()->authorizeRoles('admin');
         $id_habitant = habitante::select('id')
@@ -184,7 +184,7 @@ class Detalle_facturaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(MultaEditRequest $request, $id)
     {
         $request->user()->authorizeRoles('admin');
         $detalle = Detalle_factura::findOrFail($id);
