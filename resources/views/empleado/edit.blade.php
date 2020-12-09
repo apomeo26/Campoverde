@@ -79,6 +79,20 @@
         <input type="date" name="fecha_registro" class="form-control" value="{{$empleado->fecha_registro}}">
     </div>
 </div>
+
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <div class="form-group">
+        <br>
+            <label for="Role">Zona</label>
+            <select name="zona_id" id="zona_id" class="form-control selectpicker" data-livesearch="true">
+                <option value="{{$empleado->Zona->id}}" disabled selected>{{$empleado->Zona->nombre}}</option>
+                @foreach($zona as $zona)
+                <option value="{{$zona->id}}"> {{$zona->nombre}}
+                </option>
+                @endforeach
+            </select>
+        </div>
+    </div>
 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-15">
     <div class="form-group"> <br>
         <button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-refresh"></span> Actualizar

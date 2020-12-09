@@ -90,9 +90,11 @@
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <div class="form-group">
             <br>
-            <label for="tipo_habitante">Tipo de Habitante</label>
-            <select name="tipo_habitante" id="tipo_habitante" class="form-control">
-                <option value="" disabled selected>Eliga el tipo de habitante:</option>
+            <label for="Role">Tipo habitante</label>
+            <select name="tipo_habitante" id="tipo_habitante" class="form-control selectpicker" data-livesearch="true">
+            @foreach($detalle_habitante as $detalle_h)
+                <option value="{{$detalle_h->tipo_habitante}}​​​​​" selected>{{$detalle_h->tipo_habitante}}​​​​​</option>
+            @endforeach
                 <option>Propietario</option>
                 <option>Propietario/Residente</option>
                 <option>Residente</option>
@@ -102,10 +104,12 @@
     </div>
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <div class="form-group">
-            <label for="Role">Numero apartamento</label>
+            <label for="Role">Número apartamento</label>
             <select name="apartamento_id" id="apartamento_id" class="form-control selectpicker" data-livesearch="true">
-                <option value="" diseable selected >Apartamento:</option>
-                @foreach($apartamento as $ap)
+            @foreach($detalle_habitante as $ap)
+                <option value="{{$ap->ap_id}}" selected>{{$ap->numero_apartamento}} - {{$ap->bloque}}​​​​​</option>
+            @endforeach
+            @foreach($apartamento as $ap)
                 <option value="{{$ap->id}}"> {{$ap->numero_apartamento}} - {{$ap->bloque}}
                 </option>
                 @endforeach

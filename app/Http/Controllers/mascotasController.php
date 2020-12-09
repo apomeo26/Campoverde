@@ -21,7 +21,7 @@ class mascotasController extends Controller
     }
     public function index(Request $request)
     {
-
+        $request->user()->authorizeRoles('admin');
         if ($request) {
             $query = trim($request->get('searchText'));
 
@@ -55,6 +55,7 @@ class mascotasController extends Controller
      */
     public function store(Request $request)
     {
+        $request->user()->authorizeRoles('admin');
         $mascotas = new Mascota;
         $mascotas->tipo = $request->get('tipo');
         $mascotas->raza = $request->get('raza');
@@ -82,8 +83,9 @@ class mascotasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request,$id)
     {
+        $request->user()->authorizeRoles('admin');
         $mascotas = Mascota::findOrFail($id);
 
         $habitantes = Habitante::orderBy('id', 'DESC')
@@ -101,7 +103,7 @@ class mascotasController extends Controller
      */
     public function update(Request $request, $id)
     {
-
+        $request->user()->authorizeRoles('admin');
 
         $mascotas = Mascota::findOrFail($id);
         $mascotas->tipo = $request->get('tipo');
@@ -118,8 +120,9 @@ class mascotasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request,$id)
     {
+        $request->user()->authorizeRoles('admin');
         $mascotas = Mascota::findOrFail($id);
         $mascotas->delete();
         return Redirect::to('mascota');

@@ -27,6 +27,9 @@ class HabitantesController extends Controller
     {
         $request->user()->authorizeRoles('admin');
 
+        if ($request) {
+            $query = trim($request->get('searchText'));
+
         $habitantes = Habitante::join('detalle_habitantes as dh', 'dh.habitantes_id', '=', 'habitantes.id')
             ->join('apartamento as ap', 'dh.apartamento_id', '=', 'ap.id')
             ->SELECT(
@@ -44,11 +47,15 @@ class HabitantesController extends Controller
                 'bloque',
                 'numero_apartamento'
             )
-            ->orderBy('habitantes.id', 'ASC')->paginate(3);
 
+            ->orwhere('habitantes.nombre', 'LIKE', '%' . $query . '%')
+            ->orwhere('habitantes.apellidos', 'LIKE', '%' . $query . '%')
+            ->orwhere('habitantes.numero_identificacion', 'LIKE', '%' . $query . '%')
+            ->orderBy('habitantes.id', 'ASC')->paginate(4);
 
-        return view('habitante.index', compact('habitantes'));
+        return view('habitante.index', ["habitantes" => $habitantes, "searchText" => $query]);
     }
+}
 
     /**
      * Show the form for creating a new resource.
@@ -128,12 +135,20 @@ class HabitantesController extends Controller
     public function edit($id)
     {
         $ha = Habitante::findOrFail($id);
-        $ap = apartamento::orderBy('id', 'DESC')
+
+        $dh =detalle_habitantes::join('apartamento as ap','ap.id','=','detalle_habitantes.apartamento_id')
+        ->select('detalle_habitantes.id as hab_id', 'tipo_habitante','ap.id as ap_id', 'bloque', 'numero_apartamento')
+        ->where('habitantes_id','=',$id)
+        ->orderBy('habitantes_id','DESC')
+        ->get();
+
+       /* dd($dh);*/
+        $ap = apartamento::orderBy('id', 'ASC')
             ->select('id', 'bloque', 'numero_apartamento')
             ->get();
 
 
-        return view("habitante.edit", ["Habitantes" => $ha, "apartamento" => $ap]);
+        return view("habitante.edit", ["Habitantes" => $ha, "apartamento" => $ap, "detalle_habitante"=>$dh]);
     }
 
     /**

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Empleado;
+use App\Zona;
 use Illuminate\Support\Facades\Redirect;
 
 class EmpleadoController extends Controller
@@ -13,12 +14,19 @@ class EmpleadoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index(Request $request)
     {
+        $request->user()->authorizeRoles('admin');
         if ($request) {
             $query = trim($request->get('searchText'));
 
-            $empleados = Empleado::where('id', 'LIKE', '%' . $query . '%')
+            $empleados = Empleado::orwhere('nombre', 'LIKE', '%' . $query . '%')
+            ->orwhere('apellidos', 'LIKE', '%' . $query . '%')
+            ->orwhere('numero_identificacion', 'LIKE', '%' . $query . '%')
                 ->orderBy('id', 'ASC')->paginate(3);
             return view('empleado.index', ["empleados" => $empleados, "searchText" => $query]);
         }
@@ -29,9 +37,14 @@ class EmpleadoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        return view('empleado.create');
+        $request->user()->authorizeRoles('admin');
+        $zona = Zona::orderBy('id', 'DESC')
+        ->select('zona.id', 'zona.nombre')
+        ->get();
+        return view('empleado.create')->with('zona', $zona);
+
     }
 
     /**
@@ -42,6 +55,7 @@ class EmpleadoController extends Controller
      */
     public function store(Request $request)
     {
+        $request->user()->authorizeRoles('admin');
         $empleado = new Empleado;
         $empleado->nombre = $request->get('nombre');
         $empleado->apellidos = $request->get('apellidos');
@@ -51,6 +65,7 @@ class EmpleadoController extends Controller
         $empleado->correo = $request->get('correo');
         $empleado->cargo = $request->get('cargo');
         $empleado->dotacion = $request->get('dotacion');
+        $empleado->zona_id = $request->get('zona_id');
         $empleado->fecha_registro = $request->get('fecha_registro');
         $empleado->save();
         return Redirect::to('empleado');
@@ -73,10 +88,16 @@ class EmpleadoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request,$id)
     {
+        $request->user()->authorizeRoles('admin');
         $empleado = Empleado::findOrFail($id);
-        return view("empleado.edit", ["empleado" => $empleado]);
+
+        $zona = Zona::orderBy('id', 'DESC')
+        ->select('id', 'nombre')
+        ->get();
+        return view("empleado.edit", ["empleado" => $empleado, "zona" => $zona]);
+
     }
 
     /**
@@ -88,6 +109,7 @@ class EmpleadoController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->user()->authorizeRoles('admin');
         $empleado = Empleado::findOrFail($id);
         $empleado->nombre = $request->get('nombre');
         $empleado->apellidos = $request->get('apellidos');
@@ -108,8 +130,9 @@ class EmpleadoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request,$id)
     {
+        $request->user()->authorizeRoles('admin');
         $empleado = Empleado::findOrFail($id);
         $empleado->delete();
         return Redirect::to('empleado');

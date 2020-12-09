@@ -12,4 +12,9 @@ class Empleado extends Model
         'numero_identificacion',  'direccion', 'telefono',
         'correo', 'cargo', 'dotacion', 'fecha_registro'
     ];
+
+    public function zona(){
+        return $this->belongsTo('App\Zona','zona_id');
+
+    }
 }

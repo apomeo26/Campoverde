@@ -2,7 +2,7 @@
 @section('contenido')
 <div class="row">
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-        <h3><b>Nuevo Habitante</b></h3>
+        <h3>Nuevo Habitante</h3>
         @if (count($errors)>0)
         <div class="alert alert-danger">
             <ul>
@@ -36,31 +36,32 @@
             <br>
             <label for="tipo_documento">Tipo de Documento</label>
             <select name="tipo_documento" id="tipo_documento" class="form-control">
-                <option value="" disabled selected>Eliga el tipo de Documento:</option>
-                <option>Cedula Ciudadania</option>
-                <option>Tarjeta de Identidad</option>
+                <option value="" disabled selected>Eliga el tipo de documento:</option>
+                <option>CC</option>
+                <option>TI</option>
+                <option>RC</option>
             </select>
         </div>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <div class="form-group">
             <br>
-            <label for="numero_identificacion">Numero de Documento</label>
-            <input type="text" name="numero_identificacion" id="numero_identificacion" class="form-control" placeholder="Digite el número de Documento">
+            <label for="numero_identificacion">Número de Documento</label>
+            <input type="number" name="numero_identificacion" id="numero_identificacion" class="form-control" placeholder="Digite el número de documento" maxlength="11">
         </div>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <div class="form-group">
             <br>
-            <label for="telefono">Telefono Fijo</label>
-            <input type="text" name="telefono_fijo" id="telefono_fijo" class="form-control" placeholder="Digite telefono del Habitante">
+            <label for="telefono">Teléfono Fijo</label>
+            <input type="number" name="telefono_fijo" id="telefono_fijo" class="form-control" placeholder="Ingrese el teléfono">
         </div>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <div class="form-group">
             <br>
             <label for="telefono">Telefono celular</label>
-            <input type="text" name="telefono_celular" id="telefono" class="form-control" placeholder="Digite telefono del Habitante">
+            <input type="number" name="telefono_celular" id="telefono" class="form-control" placeholder="Ingrese el número celular">
         </div>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -103,7 +104,7 @@
     </div>
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <div class="form-group">
-            <label for="Role">Numero apartamento</label>
+            <label for="Role">Número apartamento</label>
             <select name="apartamento_id" id="apartamento_id" class="form-control selectpicker" data-livesearch="true">
                 <option value="" disabled selected>Apartamento:</option>
                 @foreach($apartamento as $ap)

@@ -5,12 +5,10 @@
     <div class="col-md-8 col-xs-12">
         @include('multa.search')
     </div>
-    <div class="col-md-3">
+    <div class="col-md-2">
         <a href="multa/create" class="pull-right">
             <button class="btn btn-success">Crear multas</button>
         </a>
-        <a href="\imprimirEventos">
-        <button class="btn btn-success"><span class="glyphicon glyphicon-download-alt"></span> Generar PDF</button></a>
     </div>
 </div>
 <div class="row">
@@ -22,7 +20,6 @@
                     <th>Nombres</th>
                     <th>Apellidos</th>
                     <th>Número de identificación</th>
-                    <th>Tipo de multa</th>
                     <th>Fecha</th>
                     <th>Valor</th>
                     <th>Descripción</th>
@@ -30,13 +27,12 @@
                 </thead>
                 <tbody>
                     @foreach($Detalle_factura as $multa)
-                    @if($multa->estado_factura == 'no generada')
+                    @if($multa->estado_factura == 'Pendiente' && $multa->tipo_cobro=='Multa')
                     <tr>
 
                         <td>{{$multa->nombre}}</td>
                         <td>{{$multa->apellidos}}</td>
                         <td>{{$multa->numero_identificacion}}</td>
-                        <td>{{$multa->tipo_cobro}}</td>
                         <td>{{$multa->fecha}}</td>
                         <td>{{$multa->valor}}</td>
                         <td>{{$multa->descripcion}}</td>

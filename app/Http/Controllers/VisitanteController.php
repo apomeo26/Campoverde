@@ -14,6 +14,10 @@ class VisitanteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index(Request $request)
     {
         if ($request) {
@@ -36,8 +40,9 @@ class VisitanteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
+
         $ap = Apartamento::select('id', 'bloque', 'numero_apartamento')
             ->orderBy('id', 'ASC')
             ->get();
@@ -113,8 +118,9 @@ class VisitanteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request,$id)
     {
+        $request->user()->authorizeRoles('admin');
         $visitantes = Visitante::findOrFail($id);
         $visitantes->delete();
         return Redirect::to('visitante');

@@ -22,14 +22,23 @@ Route::resource('mascota','mascotasController');
 Route::resource('habitante', 'HabitantesController');
 Route::resource('empleado',  'EmpleadoController');
 Route::resource('visitante',  'VisitanteController');
-Route::get('imprimirEventos','PDFController@imprimirEventos')->name('imprimirEventos');
-Route::get('imprimirParqueadero', 'PDFController@imprimirParqueadero')->name('imprimirParqueadero');
-Route::get('imprimirHabitantes','PDFController@imprimirHabitantes')->name('imprimirHabitantes');
-Auth::routes();
 Route::resource('multa','Detalle_facturaController');
 Route::resource('Lista_vehiculo','Lista_VehiculoController');
 Route::resource('parqueadero','ParqueaderoController');
+Route::resource('factura', 'FacturaController');
+Route::resource('pago', 'PagoController');
 
+
+Route::get('imprimirEventos','PDFController@imprimirEventos')->name('imprimirEventos');
+Route::get('imprimirParqueadero', 'PDFController@imprimirParqueadero')->name('imprimirParqueadero');
+Route::get('imprimirHabitantes','PDFController@imprimirHabitantes')->name('imprimirHabitantes');
+Route::get('imprimirFacturas/{id}','PDFController@imprimirFacturas')->name('imprimirFacturas');
+Auth::routes();
+
+
+
+
+Route::get('pagar/{id}/{habitantes_id}','FacturaController@pagar')->name('pagar');
 Route::get('ingresar/{id}/{placa}','ParqueaderoController@ingresar')->name('ingresar');
 
 Route::get('/home', 'HomeController@index')->name('home');

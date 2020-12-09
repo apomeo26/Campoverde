@@ -1,6 +1,6 @@
 @extends('layout.plantilla')
 @section('contenido')
-<h3>EMPLEADOS</h3>
+<h3>Empleados</h3>
 <div class="row">
     <div class="col-md-8 col-xs-12">
     @include('empleado.search')
@@ -16,22 +16,21 @@
         <div class="table-responsive ">
             <table class="table table-striped table-hover">
                 <thead>
-                    <th>Id</th>
                     <th>Nombre</th>
                     <th>Apellidos</th>
-                    <th>identificacion</th>
-                    <th>Direccion</th>
-                    <th>Telefono</th>
+                    <th>Identificación</th>
+                    <th>Dirección</th>
+                    <th>Teléfono</th>
                     <th>Correo</th>
                     <th>Cargo</th>
-                    <th>Dotacion</th>
+                    <th>Dotación</th>
+                    <th>Zona</th>
                     <th>Fecha de Registro</th>
                     <th width="180">Opciones</th>
                 </thead>
                 <tbody>
                     @foreach($empleados as $empleado)
                     <tr>
-                        <td>{{ $empleado->id }}</td>
                         <td>{{ $empleado->nombre}}</td>
                         <td>{{ $empleado->apellidos }}</td>
                         <td>{{ $empleado->numero_identificacion}}</td>
@@ -40,6 +39,7 @@
                         <td>{{ $empleado->correo}}</td>
                         <td>{{ $empleado->cargo}}</td>
                         <td>{{ $empleado->dotacion}}</td>
+                        <td>{{ $empleado->zona->nombre ?? 'Zona no encontrada'}}</td>
                         <td>{{ $empleado->fecha_registro}}</td>
                         <td>
                             <a href="{{URL::action('EmpleadoController@edit',$empleado->id)}}"> <button class="btn btn-primary">Actualizar</button></a>

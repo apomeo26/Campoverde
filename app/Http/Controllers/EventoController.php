@@ -26,7 +26,7 @@ class EventoController extends Controller
             $query = trim($request->get('searchText'));
 
             $eventos = Evento::where('id', 'LIKE', '%' . $query . '%')
-                ->orderBy('id', 'ASC')->paginate(3);
+            ->orderBy('id', 'ASC')->paginate(8);
             return view('evento.index', ["eventos" => $eventos, "searchText" => $query]);
         }
        
@@ -62,6 +62,7 @@ class EventoController extends Controller
         $eventos->descripcion = $request->get('descripcion');
         $eventos->estado = $request->get('estado');
         $eventos->fecha_registro = $request->get('fecha_registro');
+        $eventos->fecha_finalizacion = $request->get('fecha_finalizacion');
         $eventos->habitantes_id =$request->get('habitantes_id');
         $eventos->save();
         return Redirect::to('evento');
@@ -107,6 +108,7 @@ class EventoController extends Controller
         $eventos->descripcion = $request->get('descripcion');
         $eventos->estado = $request->get('estado');
         $eventos->fecha_registro = $request->get('fecha_registro');
+        $eventos->fecha_finalizacion = $request->get('fecha_finalizacion');
         $eventos->update();
         return Redirect::to('evento');
     }

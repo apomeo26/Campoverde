@@ -20,14 +20,18 @@
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <div class="form-group">
             <br><label for="tipo">Tipo</label>
-            <input type="text" name="tipo" id="tipo" class="form-control" placeholder="Ingrese el tipo de evento">
+            <select name="tipo" id="tipo" class="form-control">
+                <option value="" disabled selected>Elija el evento:</option>
+                <option>Fiesta</option>
+                <option>Reunión</option>
+            </select>
         </div>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <div class="form-group">
             <br>
-            <label for="descripcion">Descripcion</label>
-            <input type="text" name="descripcion" id="descripcion" class="form-control" placeholder="Ingrese una descripcion" >
+            <label for="descripcion">Descripción</label>
+            <input type="text" name="descripcion" id="descripcion" class="form-control" placeholder="Ingrese una descripción" >
         </div>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -35,7 +39,7 @@
             <br>
             <label for="estado">Estado</label>
             <select name="estado" id="estado" class="form-control">
-                <option value="" disabled selected>Eliga el estado:</option>
+                <option value="" disabled selected>Elija el estado:</option>
                 <option>Activo</option>
                 <option>Inactivo</option>
             </select>
@@ -49,7 +53,7 @@
         </div>
     </div>
 
-    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <div class="form-group">
         <br>
             <label for="Role">Responsable</label>

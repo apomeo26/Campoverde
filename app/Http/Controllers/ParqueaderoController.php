@@ -19,9 +19,14 @@ class ParqueaderoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index(Request $request)
     {
-
+        
+        
         if ($request) {
             $query = trim($request->get('searchText'));
             $estado = "Salio";
@@ -43,7 +48,7 @@ class ParqueaderoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
         $estado='Salio';
 
@@ -95,8 +100,9 @@ class ParqueaderoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request,$id)
     {
+        $request->user()->authorizeRoles('admin');
         $parqueadero = parqueadero::findOrFail($id);
         return view("parqueadero.edit", ["parqueadero" => $parqueadero]);
     }

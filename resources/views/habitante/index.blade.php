@@ -18,7 +18,6 @@
         <div class="table-responsive">
             <table class="table table-striped table-hover" >
                 <thead>
-                    <th>Id</th>
                     <th>Nombre</th>
                     <th>Apellidos</th>
                     <th>Tipo de Documento</th>
@@ -26,17 +25,14 @@
                     <th>Fijo</th>
                     <th>Celular</th>
                     <th>Correo</th>
-                    <th>Estado</th>
                     <th>Tipo Habitante</th>
                     <th>Bloque</th>
                     <th>Apartamento</th>
-                    <th>Registro</th>
                     <th width="180">Opciones</th>
                 </thead>
                 <tbody>
                     @foreach($habitantes as $hab)
                     <tr>
-                        <td>{{ $hab->id }}</td>
                         <td>{{ $hab->nombre}}</td>
                         <td>{{ $hab->apellidos}}</td>
                         <td>{{ $hab->tipo_documento}}</td>
@@ -44,11 +40,9 @@
                         <td>{{ $hab->telefono_fijo}}</td>
                         <td>{{ $hab->telefono_celular}}</td>
                         <td>{{ $hab->correo}}</td>
-                        <td>{{ $hab->estado_vigencia}}</td>
                         <td>{{ $hab->tipo_habitante}}</td>
                         <td>{{ $hab->bloque}}</td>
                         <td>{{ $hab->numero_apartamento}}</td>
-                        <td>{{ $hab->fecha_registro}}</td>
                         <td>
                             <a href="{{URL::action('HabitantesController@edit',$hab->id)}}"> <button class="btn btn-primary">Actualizar</button></a>
 

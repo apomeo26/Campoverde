@@ -45,29 +45,20 @@
         </div>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-        <div class="form-group"> 
-            <label for="tipo_responsable">Tipo Responsable</label>
-            <select name="tipo_responsable" id="tipo_responsable" class="form-control">
-                <option value="{{$eventos->tipo_responsable}}" selected>{{$eventos->tipo_responsable}}</option>
-                <option>Admon</option>
-                <option>Habitante</option>
-            </select>
-        </div>
-    </div>
-    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <div class="form-group">
             <label for="Role">Responsable</label>
             <select name="habitantes_id" id="habitantes_id" class="form-control selectpicker" data-livesearch="true">
-                <option value="" diseable selected >Responsable:</option>
+                <option value="{{$eventos->habitantes->id}}" diseable selected >{{$eventos->habitantes->nombre}} {{$eventos->habitantes->apellidos}}</option>
                 @foreach($habitantes as $habitante)
-                <option value="{{$habitante->id}}"> {{$habitante->nombre}} - {{$habitante->apellidos}}
+                <option value="{{$habitante->id}}"> {{$habitante->nombre}} {{$habitante->apellidos}}
                 </option>
                 @endforeach
             </select>
         </div>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-        <div class="form-group"> <br>
+        <br>
+        <div class="form-group"> 
             <button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-home"></span>Actualizar</button>
             <a class="btn btn-info" type="reset" href="{{url('evento')}}"><span class="glyphicon glyphicon-home"></span>Regresar</a>
         </div>

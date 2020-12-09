@@ -16,7 +16,7 @@
         <h3 class="text-center">Tel. 555555</h3><br> <br> <br>
         <table class="table table-bordered table-striped table-hover ">
             <tr>
-                <th>Numero de identificacion</th>
+                <th>Número de identificación</th>
                 <th>Nombre</th>
                 <th>Apellido</th>
                 <th>Correo</th>

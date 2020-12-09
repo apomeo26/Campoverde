@@ -1,4 +1,4 @@
-@extends('layout.plantilla')
+@extends('layouts.plantilla')
 @section('contenido')
 <div class="row">
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -19,15 +19,15 @@
 <div class="row">
     <div class="col-lg-5 col-md-6 col-sm-6 col-xs-12">
         <div class="form-group">
-            <br><label for="documento">Número documento del responsable a multar:</label>
-            <input type="number" name="documento" id="documento" class="form-control" placeholder="Digite el número documento">
+            <br><label for="documento">Numero Documento del responsable a multar:</label>
+            <input type="number" name="documento" id="documento" class="form-control" placeholder="Digite el número Documento">
         </div>
 
         <div class="form-group">
 
-            <label for="multa">Descripción de multa:</label>
+            <label for="multa">Tipo de multa:</label>
             <select name="multa" id="multa" class="form-control selectpicker" data-livesearch="true">
-                <option value="" disabled selected>Multas:</option>
+                <option value="" disabled selected>multas:</option>
                 @foreach($multa as $tipo)
                 <option value="{{$tipo->id}}">{{ $tipo->descripcion }}</option>
                 @endforeach

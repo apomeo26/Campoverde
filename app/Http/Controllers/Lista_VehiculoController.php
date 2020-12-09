@@ -22,8 +22,13 @@ class Lista_VehiculoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index(Request $request)
     {
+        $request->user()->authorizeRoles('admin');
         if ($request) {
             $query = trim($request->get('searchText'));
 
@@ -96,7 +101,7 @@ class Lista_VehiculoController extends Controller
      */
     public function store(Request $request)
     {
-
+        $request->user()->authorizeRoles('admin');
        $query = trim($request->get('documento'));
         $placaVehi = $request->get('placaVehi');
 
@@ -179,8 +184,9 @@ class Lista_VehiculoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request,$id)
     {
+        $request->user()->authorizeRoles('admin');
         $lista_vehiculos = lista_vehiculo::findOrFail($id);
         return view("vehiculoL.edit", ["sv" => $lista_vehiculos]);
     }
@@ -194,6 +200,7 @@ class Lista_VehiculoController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->user()->authorizeRoles('admin');
         $query = $request->get('placaVehi');
 
         /**validar si ya existe un vehiculo registrado con esa misma placa
@@ -230,9 +237,9 @@ class Lista_VehiculoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-
+        $request->user()->authorizeRoles('admin');
         $vehiculo = parqueadero::where('lista_vehiculos_id', '=', $id);
         $vehiculo->delete();
 

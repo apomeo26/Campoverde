@@ -21,8 +21,14 @@ class Detalle_facturaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index(Request $request)
     {
+        $request->user()->authorizeRoles('admin');
         if ($request) {
             $query = trim($request->get('searchText'));
 
@@ -55,8 +61,9 @@ class Detalle_facturaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
+        $request->user()->authorizeRoles('admin');
         $multa = Concepto_cobro::orderBy('id', 'DESC')
             ->select('concepto_cobros.id', 'concepto_cobros.tipo_cobro', 'concepto_cobros.descripcion')
             ->where('concepto_cobros.tipo_cobro','=','Multa')
@@ -72,6 +79,7 @@ class Detalle_facturaController extends Controller
      */
     public function store(Request $request)
     {
+        $request->user()->authorizeRoles('admin');
         $id_habitant = habitante::select('id')
             ->where('numero_identificacion', '=', $request->get('documento'))->first();
         $id_habitante = $id_habitant;
@@ -91,7 +99,7 @@ class Detalle_facturaController extends Controller
             if ($tipo->tipo_habitante == 'Propietario' || $tipo->tipo_habitante == 'Propietario/Residente'){
 
                 $profession = Factura::select('id')
-                    ->where('estado_factura', '=', 'no generada')
+                    ->where('estado_factura', '=', 'Pendiente')
                     ->where('habitantes_id', '=', $id_habitante->id)->first();
                 $id_factura = $profession;
 
@@ -101,11 +109,11 @@ class Detalle_facturaController extends Controller
                     $factura = new Factura;
                     $factura->habitantes_id = $id_habitante->id;
                     $factura->valor_total = 0;
-                    $factura->estado_factura = 'no generada';
+                    $factura->estado_factura = 'Pendiente';
                     $factura->save();
 
                     $profession = Factura::select('id')
-                        ->where('estado_factura', '=', 'no generada')
+                        ->where('estado_factura', '=', 'Pendiente')
                         ->where('habitantes_id', '=', $id_habitante->id)->first();
 
                     $id_factura = $profession;
@@ -158,8 +166,9 @@ class Detalle_facturaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request,$id)
     {
+        $request->user()->authorizeRoles('admin');
         $Detalle_factura = Detalle_factura::findOrFail($id);
         $tipo_cobros = Concepto_cobro::orderBy('id', 'DESC')
         ->select('concepto_cobros.id', 'concepto_cobros.tipo_cobro', 'concepto_cobros.descripcion')
@@ -177,6 +186,7 @@ class Detalle_facturaController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->user()->authorizeRoles('admin');
         $detalle = Detalle_factura::findOrFail($id);
         $detalle->concepto_cobros_id = $request->get('multa');
         $detalle->fecha = $request->get('fecha');
@@ -194,8 +204,9 @@ class Detalle_facturaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request,$id)
     {
+        $request->user()->authorizeRoles('admin');
         $detalle_factura = Detalle_factura::findOrFail($id);
         $detalle_factura->delete();
         //return Redirect::to('multa');

@@ -16,14 +16,12 @@
         <h3 class="text-center">Tel. 555555</h3><br> <br> <br>
         <table class="table table-bordered table-striped table-hover">
             <tr>
-                <th>ID</th>
                 <th>Placa</th>
                 <th>Modelo</th>
                 <th>Fecha</th>
                 <th>Estado</th>
 
             </tr>@foreach($parqueadero as $pro)<tr>
-                <td>ID: {{$pro->id}}</td>
                 <td>{{$pro->placa}}</td>
                 <td>{{$pro->modelo}}</td>
                 <td>{{$pro->fecha}}</td>
@@ -31,7 +29,7 @@
             </tr>@endforeach
         </table>
         <h5 class="text-center">Unidad residencial Campo Verde</h5>
-        <h6>Version 1.0</h6>
+        <h6 class="text-center">Version 1.0</h6>
     </div>
 </body>
 

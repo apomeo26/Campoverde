@@ -16,7 +16,6 @@
         <div class="table-responsive">
             <table class="table table-striped table-hover">
                 <thead>
-                    <th>Id</th>
                     <th>Nombre</th>
                     <th>Apellidos</th>
                     <th>Tipo de Documento</th>
@@ -29,7 +28,6 @@
                 <tbody>
                     @foreach($visitantes as $visitante)
                     <tr>
-                        <td>{{ $visitante->id }}</td>
                         <td>{{ $visitante->nombre}}</td>
                         <td>{{ $visitante->apellidos }}</td>
                         <td>{{ $visitante->tipo_documento}}</td>
