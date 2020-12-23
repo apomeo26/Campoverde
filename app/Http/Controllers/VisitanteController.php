@@ -29,7 +29,7 @@ class VisitanteController extends Controller
                 ->orwhere('tipo_documento', 'LIKE', '%' . $query . '%')
                 ->orwhere('temperatura', 'LIKE', '%' . $query . '%')
                 ->orwhere('fecha_visita', 'LIKE', '%' . $query . '%')
-                ->orderBy('id', 'ASC')->paginate(3);
+                ->orderBy('id', 'ASC')->paginate(7);
             /**  return view('visitante.index', compact('visitantes'));
              */
             return view("visitante.index", ["visitantes" => $visitantes, "searchText" => $query]);

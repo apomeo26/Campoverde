@@ -58,7 +58,7 @@ class FacturaController extends Controller
                     'facturas.estado_factura'
                 )
                 ->orderBy('facturas.id', 'ASC')
-                ->paginate(4);
+                ->paginate(7);
 
             return view('factura.index', ["Facturacion" => $liquidacion, "searchText" => $query]);
         }

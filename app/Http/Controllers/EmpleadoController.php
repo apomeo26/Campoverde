@@ -120,6 +120,7 @@ class EmpleadoController extends Controller
         $empleado->correo = $request->get('correo');
         $empleado->cargo = $request->get('cargo');
         $empleado->dotacion = $request->get('dotacion');
+        $empleado->zona_id = $request->get('zona_id');
         $empleado->fecha_registro = $request->get('fecha_registro');
         $empleado->update();
         return Redirect::to('empleado');
