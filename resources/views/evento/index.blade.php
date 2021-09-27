@@ -5,12 +5,14 @@
     <div class="col-md-8 col-xs-12">
         @include('evento.search')
     </div>
-    <div class="col-md-3" >
+    <div class="col-md-3">
         <a href="evento/create" class="pull-right">
             <button class="btn btn-success">Crear Evento</button>
         </a>
         <a href="\imprimirEventos">
-        <button class="btn btn-success"><span class="glyphicon glyphicon-download-alt"></span> Generar PDF</button></a>
+            <button class="btn btn-success">
+                <span class="glyphicon glyphicon-download-alt"></span>
+                Generar PDF</button></a>
     </div>
 </div>
 

@@ -10,7 +10,7 @@ tabindex="-1" id="modal-delete-{{$visitante->id}}">
                 <h4 class="modal-title">Eliminar Visitante</h4>
             </div>
             <div class="modal-body">
-                <p>Confirme si desea Eliminar el Visitante con el ID {{$visitante->id}}</p>
+                <p>Confirme si desea eliminar el visitante</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal"> Cerrar </button>

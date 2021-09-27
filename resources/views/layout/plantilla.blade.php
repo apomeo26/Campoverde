@@ -99,7 +99,7 @@ desired effect
                         <!-- Message title and timestamp -->
                         <h4>
                           Support Team
-                          <small><i class="fa fa-clock-o"></i> 5 mins</small>
+                          <small><i class="fa fa-clock-o"></i> 5 minutos</small>
                         </h4>
                         <!-- The message -->
                         <p>Why not buy a new awesome theme?</p>
@@ -109,7 +109,7 @@ desired effect
                   </ul>
                   <!-- /.menu -->
                 </li>
-                <li class="footer"><a href="#">See All Messages</a></li>
+                <li class="footer"><a href="#">Ver todos los mensajes</a></li>
               </ul>
             </li>
             <!-- /.messages-menu -->
@@ -117,12 +117,13 @@ desired effect
             <!-- Notifications Menu -->
             <li class="dropdown notifications-menu">
               <!-- Menu toggle button -->
+             
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <i class="fa fa-bell-o"></i>
                 <span class="label label-warning">10</span>
               </a>
               <ul class="dropdown-menu">
-                <li class="header">You have 10 notifications</li>
+                <li class="header">Tienes 10 notificaciones</li>
                 <li>
                   <!-- Inner Menu: contains the notifications -->
                   <ul class="menu">
@@ -162,7 +163,7 @@ desired effect
                         <div class="progress xs">
                           <!-- Change the css width attribute to simulate progress -->
                           <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                            <span class="sr-only">20% Complete</span>
+                            <span class="sr-only">20% Completado</span>
                           </div>
                         </div>
                       </a>
@@ -180,18 +181,18 @@ desired effect
               <!-- Menu Toggle Button -->
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <!-- The user image in the navbar-->
-                <img src="{{asset('dist/img/user2-160x160.jpg')}}" class="user-image" alt="User Image">
+                <img src="{{asset('dist/img/logo2.jpg')}}" class="user-image" alt="User Image">
                 <!-- hidden-xs hides the username on small devices so only the image appears. -->
                 <span class="hidden-xs">{{ Auth::user()->name }}</span>
               </a>
               <ul class="dropdown-menu">
                 <!-- The user image in the menu -->
                 <li class="user-header">
-                  <img src="{{asset('dist/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
+                  <img src="{{asset('dist/img/logo2.jpg')}}" class="img-circle" alt="User Image">
 
                   <p style="color: black;">
                     {{ Auth::user()->name }}
-                    <small>Member since Nov. 2012</small>
+                    <small>CampoVerde</small>
                   </p>
                 </li>
                 <!-- Menu Body -->
@@ -243,7 +244,7 @@ desired effect
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel">
           <div class="pull-left image">
-            <img src="{{asset('dist/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
+            <img src="{{asset('dist/img/logo2.jpg')}}" class="img-circle" alt="User Image">
           </div>
           <div class="pull-left info">
             <p>{{ Auth::user()->name }}</p>
@@ -266,11 +267,11 @@ desired effect
 
         <!-- Sidebar Menu -->
         <ul class="sidebar-menu" data-widget="tree">
+        
           <li class="header"></li>
           <!-- Optionally, you can add icons to the links -->
           <!--<li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
         <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>-->
-
           <li class="treeview">
           <li><a href="{{url('evento')}}"><i class="fa fa-calendar" aria-hidden="true"></i>Eventos</a></li>
           <li><a href="{{url('mascota')}}"><i class="fa fa-paw" aria-hidden="true"></i>Mascotas</a></li>
@@ -280,7 +281,7 @@ desired effect
           <li><a href="{{url('Lista_vehiculo')}}"><i class="fa fa-automobile" aria-hidden="true"></i>Vehiculos</a></li>
           <li><a href="{{url('parqueadero')}}"><i class="fa fa-road" aria-hidden="true"></i>Parqueadero</a></li>
           <li><a href="{{url('multa')}}"><i class="fa fa-money" aria-hidden="true"></i>Multas</a></li>
-          <li><a href="{{url('factura')}}"><i class="fa fa-file-text" aria-hidden="true"></i>Facturación</a></li>
+          <li><a href="{{url('factura')}}"><i class="fa fa-file-text" aria-hidden="true"></i>Facturación</a></li>   
         </ul>
         </li>
         </ul>
@@ -310,11 +311,13 @@ desired effect
         | Your Page Content Here |
         -------------------------->
         @yield('contenido')
+        
       </section>
       <!-- /.content -->
+      
     </div>
     <!-- /.content-wrapper -->
-
+    
     <!-- Main Footer -->
     <footer class="main-footer">
       <!-- To the right -->
@@ -351,6 +354,7 @@ desired effect
             </li>
           </ul>
           <!-- /.control-sidebar-menu -->
+          
 
           <h3 class="control-sidebar-heading">Tasks Progress</h3>
           <ul class="control-sidebar-menu">

@@ -211,4 +211,5 @@ class HabitantesController extends Controller
 
         return Redirect::to('habitante');
     }
+    
 }

@@ -32,6 +32,7 @@
             <br>
             <label for="descripcion">Descripción</label>
             <input type="text" name="descripcion" id="descripcion" class="form-control" placeholder="Ingrese una descripción" maxlength="200" required>
+            
         </div>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -59,9 +60,9 @@
             <input type="date" name="fecha_finalizacion" id="fecha_finalizacion" class="form-control" required>
         </div>
     </div>
-   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <div class="form-group">
-        <br>
+            <br>
             <label for="Role">Responsable</label>
             <select name="habitantes_id" id="habitantes_id" class="form-control selectpicker" data-livesearch="true" required>
                 <option value="" disabled selected>Responsable:</option>

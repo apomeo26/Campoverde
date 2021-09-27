@@ -29,6 +29,7 @@ Route::resource('factura', 'FacturaController');
 Route::resource('pago', 'PagoController');
 
 
+
 Route::get('imprimirEventos','PDFController@imprimirEventos')->name('imprimirEventos');
 Route::get('imprimirParqueadero', 'PDFController@imprimirParqueadero')->name('imprimirParqueadero');
 Route::get('imprimirHabitantes','PDFController@imprimirHabitantes')->name('imprimirHabitantes');

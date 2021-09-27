@@ -2,7 +2,7 @@
 @section ('contenido')
     <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-        <h3>Editar datos del vehiculo</h3>
+        <h3>Editar datos del vehículo</h3>
         @if (count($errors)>0)
         <div class="alert alert-danger">
             <ul>
@@ -17,11 +17,11 @@
 {{Form::open(array('action'=>array('Lista_VehiculoController@update',$sv->id),'method'=>'patch'))}}
 <div class="col-lg-5 col-md-6 col-sm-6 col-xs-12">
           <div class="form-group">
-          <br><label for="documento">Numero Documento del propietario del vehiculo</label>
+          <br><label for="documento">Número de identificación del propietario del vehículo</label>
 <input type="number"name="documento"id="documento"class="form-control"placeholder= "" value="{{$sv->habitantes->numero_identificacion}}" readonly>
         </div> 
       <div class="form-group">
-      <label for="tipoVehi">tipo de vehiculo</label>
+      <label for="tipoVehi">Tipo de vehículo</label>
       <select name="tipoVehi" id="tipoVehi" class="form-control selectpicker" data-livesearch="true" required value="{{$sv->tipo_vehiculo}}">
       <?php 
       if($sv['tipo_vehiculo']=="Motocicleta"){
@@ -43,12 +43,12 @@
       </div>
 
       <div class="form-group">
-          <br><label for="modeloVehi">Modelo del vehiculo</label>
+          <br><label for="modeloVehi">Modelo del vehículo</label>
 <input type="text"name="modeloVehi"id="modeloVehi"class="form-control"placeholder= "Digite el modelo del vehiculo" value="{{$sv->modelo}}">
         </div> 
         
         <div class="form-group">
-          <br><label for="placaVehi">Placa del vehiculo</label>
+          <br><label for="placaVehi">Placa del vehículo</label>
 <input type="text"name="placaVehi"id="placaVehi"class="form-control"placeholder= "Digite la placa del vehiculo" value="{{$sv->placa}}">
         </div> 
             <div class="col-lg-8 col-md-6 col-sm-6 col-xs-12">

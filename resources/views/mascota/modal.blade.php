@@ -9,7 +9,7 @@
                 <h4 class="modal-title">Eliminar Mascota</h4>
             </div>
             <div class="modal-body">
-                <p>Confirme si desea eliminar la mascota</p>
+                <p>Desea eliminar la mascota?</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal"> Cerrar

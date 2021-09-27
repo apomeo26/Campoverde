@@ -7,7 +7,7 @@
     </div>
     <div class="col-md-2">
         <a href="mascota/create" class="pull-right">
-            <button class="btn btn-success">Crear mascota</button>
+            <button class="btn btn-success">Nueva mascota</button>
         </a>
     </div>
 </div>
