@@ -29,7 +29,7 @@
                 <td>{{$evento->fecha_registro}}</td>
             </tr>@endforeach
         </table>
-        <h5 class="text-center">Unidad residencial Campo Verde</h5>
+        <h5 class="text-center">Unidad Residencial Campo Verde</h5>
         <h6 align="center">version 1.0</h6>
     </div>
 </body>

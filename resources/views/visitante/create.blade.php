@@ -2,7 +2,7 @@
 @section('contenido')
 <div class="row">
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-        <h3><b>Nuevo Visitante</b></h3>
+        <h3><b>Visitantes</b></h3>
         @if (count($errors)>0)
         <div class="alert alert-danger">
             <ul>
@@ -45,7 +45,7 @@
     <div class="form-group">
         <br>
         <label for="numero_identificacion">Documento del Visitante</label>
-        <input type="number" name="numero_identificacion" id="numero_identificacion" class="form-control" placeholder="Digite el número de Documento">
+        <input type="number" name="numero_identificacion" id="numero_identificacion" class="form-control" placeholder="Digite el número de Documento" minlength="8" maxlength="10" pattern="[0-9]+" title="Solo números" required>
     </div>
 </div>
 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
