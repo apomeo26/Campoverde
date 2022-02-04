@@ -20,4 +20,10 @@ class apartamento extends Model
     {
         return $this->hasMany('App\detalle_habitantes');
     }
+
+    public function consejo()
+    {
+        return $this->hasMany('App\Consejo');
+    }
 }
+

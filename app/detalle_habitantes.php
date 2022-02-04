@@ -21,4 +21,9 @@ class detalle_habitantes extends Model
     {
         return $this->hasMany('App\apartamento');
     }
+
+    public function consejo()
+    {
+        return $this->hasMany('App\Consejo');
+    }
 }

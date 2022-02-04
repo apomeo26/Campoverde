@@ -33,5 +33,9 @@ class Habitante extends Model
     public function evento(){
         return $this->hasMany('App\Evento');
     }
+    public function consejo()
+    {
+        return $this->hasMany('App\Consejo');
+    }
 }
 

@@ -41,50 +41,50 @@
             </select>
         </div>
     </div>
-<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-    <div class="form-group">
-        <br>
-        <label for="numero_identificacion">Documento del Visitante</label>
-        <input type="number" name="numero_identificacion" id="numero_identificacion" class="form-control" placeholder="Digite el número de Documento" minlength="8" maxlength="10" pattern="[0-9]+" title="Solo números" required>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <div class="form-group">
+            <br>
+            <label for="numero_identificacion">Documento del Visitante</label>
+            <input type="number" name="numero_identificacion" id="numero_identificacion" class="form-control" placeholder="Digite el número de Documento" minlength="8" maxlength="10" pattern="[0-9]+" title="Solo números" required>
+        </div>
     </div>
-</div>
-<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-    <div class="form-group">
-        <br>
-        <label for="temperatura">Temperatura del Visitante</label>
-        <input type="number" name="temperatura" id="temperatura" class="form-control" placeholder="Digite temperatura del visitante">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <div class="form-group">
+            <br>
+            <label for="temperatura">Temperatura del Visitante</label>
+            <input type="number" name="temperatura" id="temperatura" class="form-control" placeholder="Digite temperatura del visitante">
+        </div>
     </div>
-</div>
 
-<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-    <div class="form-group">
-        <br>
-        <label for="fecha_visita">Fecha de Visita</label>
-        <input type="date" name="fecha_visita" class="form-control">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <div class="form-group">
+            <br>
+            <label for="fecha_visita">Fecha de Visita</label>
+            <input type="date" name="fecha_visita" class="form-control">
+        </div>
     </div>
-</div>
-<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-<div class="form-group">
-        <label for="Role">Número apartamento</label>
-        <select name="apartamento_id" id="apartamento_id" class="form-control selectpicker" data-livesearch="true">
-            <option value="" disabled selected>Apartamento:</option>
-            @foreach($apartamento as $ap)
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <div class="form-group">
+            <label for="Role">Número apartamento</label>
+            <select name="apartamento_id" id="apartamento_id" class="form-control selectpicker" data-livesearch="true">
+                <option value="" disabled selected>Apartamento:</option>
+                @foreach($apartamento as $ap)
                 <option value="{{$ap->id}}"> {{$ap->numero_apartamento}} - {{$ap->bloque}}
                 </option>
-            @endforeach
-        </select>
+                @endforeach
+            </select>
+        </div>
     </div>
-    </div> 
-<div class="col-lg-9 col-md-9 col-sm-9 col-xs-15">
-    <div class="form-group">
-        <br> <button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-ok"></span>
-            Guardar</button>
-        <button class="btn btn-danger" type="reset"><span class="glyphicon glyphicon-remove"></span>
-            Vaciar Campos</button>
-        <a class="btn btn-info" type="reset" href="{{url('visitante')}}"><span class="glyphicon 
+    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-15">
+        <div class="form-group">
+            <br> <button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-ok"></span>
+                Guardar</button>
+            <button class="btn btn-danger" type="reset"><span class="glyphicon glyphicon-remove"></span>
+                Vaciar Campos</button>
+            <a class="btn btn-info" type="reset" href="{{url('visitante')}}"><span class="glyphicon 
             glyphicon-home"></span> Regresar </a>
+        </div>
     </div>
-</div>
 </div>
 {!!Form::close()!!}
 @endsection
