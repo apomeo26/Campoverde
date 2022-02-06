@@ -37,7 +37,7 @@
                         <td>{{$evento->estado}}</td>
                         <td>{{$evento->fecha_registro}}</td>
                         <td>{{$evento->fecha_finalizacion}}</td>
-                        <td>{{$evento->habitantes->nombre}} {{$evento->habitantes->apellidos}}</td>
+                        <td>{{$evento->habitantes->nombre}} {{$evento->habitantes->apellidos}} - {{$evento->habitantes->numero_identificacion}}</td>
                         <td>
                             <a href="{{URL::action('EventoController@edit',$evento->id)}}"><button class="btn btn-primary">Actualizar</button></a>
                             <a href="" data-target="#modal-delete-{{$evento->id}}" data-toggle="modal">

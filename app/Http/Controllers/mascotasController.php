@@ -26,7 +26,7 @@ class mascotasController extends Controller
             $query = trim($request->get('searchText'));
 
             $mascotas = Mascota::orwhere('nombre', 'LIKE', '%' . $query . '%')
-                ->orderBy('id', 'ASC')->paginate(3);
+                ->orderBy('id', 'ASC')->paginate(10);
             return view('mascota.index', ["mascotas" => $mascotas, "searchText" => $query]);
         }
     }
@@ -41,7 +41,7 @@ class mascotasController extends Controller
         $request->user()->authorizeRoles('admin');
         
         $habitantes = Habitante::orderBy('id', 'DESC')
-        ->select('habitantes.id', 'habitantes.nombre','habitantes.apellidos')
+        ->select('habitantes.id', 'habitantes.nombre','habitantes.apellidos','habitantes.numero_identificacion')
         ->get();
         return view('mascota.create')->with('habitantes', $habitantes);
       
@@ -89,7 +89,7 @@ class mascotasController extends Controller
         $mascotas = Mascota::findOrFail($id);
 
         $habitantes = Habitante::orderBy('id', 'DESC')
-        ->select('id', 'nombre', 'apellidos')
+        ->select('id', 'nombre', 'apellidos','numero_identificacion')
         ->get();
         return view("mascota.edit", ["mascotas" => $mascotas, "habitantes" => $habitantes]);
     }

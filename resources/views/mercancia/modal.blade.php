@@ -1,15 +1,15 @@
-<div class="modal fade modal-slide-in-right" aria-hidden="true" role="dialog" tabindex="-1" id="modal-delete-{{$mascota->id}}">
-    {{Form::Open(array('action'=>array('mascotasController@destroy',$mascota->id),'method'=>'delete'))}}
+<div class="modal fade modal-slide-in-right" aria-hidden="true" role="dialog" tabindex="-1" id="modal-delete-{{$mercancia->id}}">
+    {{Form::Open(array('action'=>array('MercanciaController@destroy',$mercancia->id),'method'=>'delete'))}}
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                 </button>
-                <h4 class="modal-title">Eliminar Mascota</h4>
+                <h4 class="modal-title">Eliminar mercancia</h4>
             </div>
             <div class="modal-body">
-                <p>¿Desea eliminar la mascota?</p>
+                <p>¿Desea eliminar la mercancia?</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal"> Cerrar

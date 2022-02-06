@@ -27,7 +27,7 @@ class EventoController extends Controller
             $query = trim($request->get('searchText'));
 
             $eventos = Evento::orwhere('tipo', 'LIKE', '%' . $query . '%')
-            ->orderBy('id', 'ASC')->paginate(8);
+            ->orderBy('id', 'ASC')->paginate(10);
             return view('evento.index', ["eventos" => $eventos, "searchText" => $query]);
         }
        
@@ -44,7 +44,7 @@ class EventoController extends Controller
     {
         $request->user()->authorizeRoles('admin');
         $habitantes = Habitante::orderBy('id', 'DESC')
-        ->select('habitantes.id', 'habitantes.nombre','habitantes.apellidos')
+        ->select('habitantes.id', 'habitantes.nombre','habitantes.apellidos','habitantes.numero_identificacion')
         ->get();
         return view('evento.create')->with('habitantes', $habitantes);
         
@@ -92,7 +92,7 @@ class EventoController extends Controller
         $request->user()->authorizeRoles('admin');
         $eventos = Evento::findOrFail($id);
         $habitantes = Habitante::orderBy('id', 'DESC')
-        ->select('id', 'nombre', 'apellidos')
+        ->select('id', 'nombre', 'apellidos','numero_identificacion')
         ->get();
         return view("evento.edit", ["eventos" => $eventos, "habitantes" => $habitantes]);
     }

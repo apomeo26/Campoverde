@@ -40,23 +40,23 @@
         </div>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-        <div class="form-group">
+        <div class="form-group"> <br>
             <label for="Role">Responsable</label>
             <select name="habitantes_id" id="habitantes_id" class="form-control selectpicker" data-livesearch="true" required>
-                <option value="" diseable selected >Responsable:</option>
+            <option value="{{$mascotas->habitantes->id}}" diseable selected>{{$mascotas->habitantes->nombre}} {{$mascotas->habitantes->apellidos}} - {{$mascotas->habitantes->numero_identificacion}}</option>
                 @foreach($habitantes as $habitante)
-                <option value="{{$habitante->id}}"> {{$habitante->nombre}} - {{$habitante->apellidos}}
+                <option value="{{$habitante->id}}"> {{$habitante->nombre}} {{$habitante->apellidos}} - {{$habitante->numero_identificacion}}
                 </option>
                 @endforeach
             </select>
         </div>
     </div>
-    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+    <div class="col-lg-10 col-md-6 col-sm-6 col-xs-12">
         <div class="form-group"> <br>
 
             <button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-refresh"></span> Actualizar </button>
 
-            <a class="btn btn-info" type="reset" href="{{url('mascota')}}"><span class="glyphiconglyphicon-home"></span> Regresar </a>
+            <a class="btn btn-info" type="reset" href="{{url('mascota')}}"><span class="glyphicon glyphicon-home"></span> Regresar </a>
         </div>
     </div>
 </div>

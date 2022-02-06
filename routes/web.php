@@ -28,6 +28,7 @@ Route::resource('Lista_vehiculo','Lista_VehiculoController');
 Route::resource('parqueadero','ParqueaderoController');
 Route::resource('factura', 'FacturaController');
 Route::resource('pago', 'PagoController');
+Route::resource('mercancia','MercanciaController');
 
 
 Route::get('imprimirConsejo','PDFController@imprimirConsejo')->name('imprimirConsejo');

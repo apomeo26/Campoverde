@@ -279,7 +279,7 @@ desired effect
           <li><a href="{{url('factura')}}"><i class="fa fa-file-text" aria-hidden="true"></i>Facturación</a></li> 
           <li><a href="{{url('habitante')}}"><i class="fa fa-group" aria-hidden="true"></i>Habitantes</a></li>
           <li><a href="{{url('mascota')}}"><i class="fa fa-paw" aria-hidden="true"></i>Mascotas</a></li>
-          <li><a href=""><i class="fa fa-truck" aria-hidden="true"></i>Mercancía</a></li>
+          <li><a href="{{url('mercancia')}}"><i class="fa fa-truck" aria-hidden="true"></i>Mercancía</a></li>
           <li><a href="{{url('multa')}}"><i class="fa fa-money" aria-hidden="true"></i>Multas</a></li>
           <li><a href="{{url('parqueadero')}}"><i class="fa fa-road" aria-hidden="true"></i>Parqueadero</a></li>
           <li><a href="{{url('Lista_vehiculo')}}"><i class="fa fa-automobile" aria-hidden="true"></i>Vehiculos</a></li>

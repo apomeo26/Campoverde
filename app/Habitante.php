@@ -37,5 +37,9 @@ class Habitante extends Model
     {
         return $this->hasMany('App\Consejo');
     }
+    
+    public function mercancia(){
+        return $this->hasMany('App\Mercancia');
+    }
 }
 

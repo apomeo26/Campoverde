@@ -50,7 +50,7 @@
         <div class="form-group">
             <br>
             <label for="fecha_registro">Fecha de registro</label>
-            <input type="text" name="fecha_registro" id="fecha_registro" class="form-control" value="{{date('Y-m-d H:i:s') }}" required>
+            <input type="date" name="fecha_registro" id="fecha_registro" class="form-control" value="{{date('Y-m-d') }}" required>
         </div>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -67,7 +67,7 @@
             <select name="habitantes_id" id="habitantes_id" class="form-control selectpicker" data-livesearch="true" required>
                 <option value="" disabled selected>Responsable:</option>
                 @foreach($habitantes as $habitante)
-                <option value="{{$habitante->id}}"> {{$habitante->nombre}} {{$habitante->apellidos}}
+                <option value="{{$habitante->id}}"> {{$habitante->nombre}} {{$habitante->apellidos}} - {{$habitante->numero_identificacion}}
                 </option>
                 @endforeach
             </select>

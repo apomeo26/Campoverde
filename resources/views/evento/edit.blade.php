@@ -41,7 +41,7 @@
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <div class="form-group"> <br>
             <label for="fecha_registro">Fecha de registro</label>
-            <input type="date" name="fecha_registro" id="fecha_registro" class="form-control" value="{{$eventos->fecha_registro}}" required >
+            <input type="date" name="fecha_registro" id="fecha_registro" class="form-control" value="{{$eventos->fecha_registro}}" required>
         </div>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -51,20 +51,20 @@
         </div>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-        <div class="form-group">
+        <div class="form-group"> <br>
             <label for="Role">Responsable</label>
             <select name="habitantes_id" id="habitantes_id" class="form-control selectpicker" data-livesearch="true" required>
-                <option value="{{$eventos->habitantes->id}}" diseable selected >{{$eventos->habitantes->nombre}} {{$eventos->habitantes->apellidos}}</option>
+                <option value="{{$eventos->habitantes->id}}" diseable selected>{{$eventos->habitantes->nombre}} {{$eventos->habitantes->apellidos}} - {{$eventos->habitantes->numero_identificacion}}</option>
                 @foreach($habitantes as $habitante)
-                <option value="{{$habitante->id}}"> {{$habitante->nombre}} {{$habitante->apellidos}}
+                <option value="{{$habitante->id}}"> {{$habitante->nombre}} {{$habitante->apellidos}} - {{$habitante->numero_identificacion}}
                 </option>
                 @endforeach
             </select>
         </div>
     </div>
-    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+    <div class="col-lg-10 col-md-6 col-sm-6 col-xs-12">
         <br>
-        <div class="form-group"> 
+        <div class="form-group">
             <button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-home"></span>Actualizar</button>
             <a class="btn btn-info" type="reset" href="{{url('evento')}}"><span class="glyphicon glyphicon-home"></span>Regresar</a>
         </div>
