@@ -19,7 +19,7 @@ class ConsejoController extends Controller
 
     public function index(Request $request)
     {
-
+        $request->user()->authorizeRoles('admin');
         if ($request) {
             $query = trim($request->get('searchText'));
             $consejo = Consejo::where('cargo_consejo', 'LIKE', '%' . $query . '%')

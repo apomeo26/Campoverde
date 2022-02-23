@@ -45,15 +45,15 @@
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <div class="form-group">
             <br>
-            <label for="numero_identificacion">Numero de Documento</label>
-            <input type="text" name="numero_identificacion" id="numero_identificacion" class="form-control" placeholder="Digite el número de Documento" minlength="8" maxlength="10" pattern="[0-9]+" title="Solo Numeros" required>
+            <label for="numero_identificacion">Número de Documento</label>
+            <input type="text" name="numero_identificacion" id="numero_identificacion" class="form-control" placeholder="Digite el número de Documento" minlength="8" maxlength="10" pattern="[0-9]+" title="Solo números" required>
         </div>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <div class="form-group">
             <br>
             <label for="telefono">Telefono Fijo</label>
-            <input type="text" name="telefono_fijo" id="telefono_fijo" class="form-control" placeholder="Digite telefono del Habitante" minlength="7" maxlength="7" pattern="[0-9]+" title="Solo Numeros" required>
+            <input type="text" name="telefono_fijo" id="telefono_fijo" class="form-control" placeholder="Digite telefono del Habitante" minlength="7" maxlength="7" pattern="[0-9]+" title="Solo números" required>
         </div>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">

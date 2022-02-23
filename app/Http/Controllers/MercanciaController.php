@@ -18,7 +18,7 @@ class MercanciaController extends Controller
     }
     public function index(Request $request)
     {
-        $request->user()->authorizeRoles('admin');
+        
         if ($request) {
             $query = trim($request->get('searchText'));
 
@@ -30,7 +30,7 @@ class MercanciaController extends Controller
 
     public function create(Request $request)
     {
-        $request->user()->authorizeRoles('admin');
+       
         
         $habitantes = Habitante::orderBy('id', 'DESC')
         ->select('habitantes.id', 'habitantes.nombre','habitantes.apellidos','habitantes.numero_identificacion')
@@ -41,7 +41,7 @@ class MercanciaController extends Controller
 
     public function store(Request $request)
     {
-        $request->user()->authorizeRoles('admin');
+      
         $mercancia = new Mercancia;
         $mercancia->habitantes_id = $request->get('habitantes_id');
         $mercancia->num_referencia = $request->get('num_referencia');
@@ -60,7 +60,7 @@ class MercanciaController extends Controller
 
     public function edit(Request $request,$id)
     {
-        $request->user()->authorizeRoles('admin');
+       
         $mercancia = Mercancia::findOrFail($id);
 
         $habitantes = Habitante::orderBy('id', 'DESC')
@@ -71,7 +71,7 @@ class MercanciaController extends Controller
 
     public function update(Request $request, $id)
     {
-        $request->user()->authorizeRoles('admin');
+       
 
         $mercancia = Mercancia::findOrFail($id);
         $mercancia->habitantes_id = $request->get('habitantes_id');

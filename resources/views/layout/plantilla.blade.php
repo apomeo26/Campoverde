@@ -58,20 +58,20 @@ desired effect
   <div class="wrapper">
 
     <!-- Main Header -->
-    <header class="main-header">
+    <header class="main-header" style="background-color:#B8DABA;">
 
       <!-- Logo -->
-      <a href="{{url('home')}}" class="logo">
+      <a href="{{url('home')}}" class="logo" style="color: #56B649;">
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini"><b>C</b>V</span>
         <!-- logo for regular state and mobile devices -->
-        <span class="logo-lg"><b>Campo</b>Verde</span>
+        <span class="logo-lg" style="color: #007723;"><b>Campo</b>Verde</span>
       </a>
 
       <!-- Header Navbar -->
       <nav class="navbar navbar-static-top" role="navigation">
         <!-- Sidebar toggle button-->
-        <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+        <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button" style="color: #007723;">
           <span class="sr-only">Toggle navigation</span>
         </a>
         <!-- Navbar Right Menu -->
@@ -80,45 +80,45 @@ desired effect
             <!-- Messages: style can be found in dropdown.less-->
             <!--<li class="dropdown messages-menu">
                Menu toggle button -->
-              <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <i class="fa fa-envelope-o"></i>
                 <span class="label label-success">4</span>
               </a>-->
-              <ul class="dropdown-menu">
-                <li class="header">You have 4 messages</li>
-                <li>
-                  <!-- inner menu: contains the messages -->
-                  <ul class="menu">
-                    <li>
-                      <!-- start message -->
-                      <a href="#">
-                        <div class="pull-left">
-                          <!-- User Image -->
-                          <img src="{{asset('dist/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
-                        </div>
-                        <!-- Message title and timestamp -->
-                        <h4>
-                          Support Team
-                          <small><i class="fa fa-clock-o"></i> 5 minutos</small>
-                        </h4>
-                        <!-- The message -->
-                        <p>Why not buy a new awesome theme?</p>
-                      </a>
-                    </li>
-                    <!-- end message -->
-                  </ul>
-                  <!-- /.menu -->
-                </li>
-                <li class="footer"><a href="#">Ver todos los mensajes</a></li>
-              </ul>
+            <ul class="dropdown-menu">
+              <li class="header">You have 4 messages</li>
+              <li>
+                <!-- inner menu: contains the messages -->
+                <ul class="menu">
+                  <li>
+                    <!-- start message -->
+                    <a href="#">
+                      <div class="pull-left">
+                        <!-- User Image -->
+                        <img src="{{asset('dist/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
+                      </div>
+                      <!-- Message title and timestamp -->
+                      <h4>
+                        Support Team
+                        <small><i class="fa fa-clock-o"></i> 5 minutos</small>
+                      </h4>
+                      <!-- The message -->
+                      <p>Why not buy a new awesome theme?</p>
+                    </a>
+                  </li>
+                  <!-- end message -->
+                </ul>
+                <!-- /.menu -->
+              </li>
+              <li class="footer"><a href="#">Ver todos los mensajes</a></li>
+            </ul>
             </li>
             <!-- /.messages-menu -->
 
             <!-- Notifications Menu -->
             <li class="dropdown notifications-menu">
               <!-- Menu toggle button -->
-             
-            <!--  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+
+              <!--  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <i class="fa fa-bell-o"></i>
                 <span class="label label-warning">10</span>
               </a>-->
@@ -149,26 +149,26 @@ desired effect
               <ul class="dropdown-menu">
                 <li class="header">You have 9 tasks</li>
                 <li>
-                   //Inner menu: contains the tasks 
+                  //Inner menu: contains the tasks
                   <ul class="menu">
                     <li>
-                      //Task item 
+                      //Task item
                       <a href="#">
-                        // Task title and progress text 
+                        // Task title and progress text
                         <h3>
                           Design some buttons
                           <small class="pull-right">20%</small>
                         </h3>
-                        // The progress bar 
+                        // The progress bar
                         <div class="progress xs">
-                          // Change the css width attribute to simulate progress 
+                          // Change the css width attribute to simulate progress
                           <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
                             <span class="sr-only">20% Completado</span>
                           </div>
                         </div>
                       </a>
                     </li>
-                    //end task item 
+                    //end task item
                   </ul>
                 </li>
                 <li class="footer">
@@ -181,14 +181,14 @@ desired effect
               <!-- Menu Toggle Button -->
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <!-- The user image in the navbar-->
-                <img src="{{asset('dist/img/logo2.jpg')}}" class="user-image" alt="User Image">
+                <img src="{{asset('dist/img/logoIni.jpg')}}" class="user-image" alt="User Image">
                 <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                <span class="hidden-xs">{{ Auth::user()->name }}</span>
+                <span class="hidden-xs" style="color: #007723;">{{ Auth::user()->name }}</span>
               </a>
               <ul class="dropdown-menu">
                 <!-- The user image in the menu -->
                 <li class="user-header">
-                  <img src="{{asset('dist/img/logo2.jpg')}}" class="img-circle" alt="User Image">
+                  <img src="{{asset('dist/img/logoIni.jpg')}}" class="img-circle" alt="User Image">
 
                   <p style="color: black;">
                     {{ Auth::user()->name }}
@@ -197,7 +197,7 @@ desired effect
                 </li>
                 <!-- Menu Body -->
                 <li class="user-body">
-                 <!-- <div class="row">
+                  <!-- <div class="row">
                     <div class="col-xs-4 text-center">
                       <a href="#">Followers</a>
                     </div>
@@ -212,11 +212,11 @@ desired effect
                 </li>
                 <!-- Menu Footer-->
                 <li class="user-footer">
-                <!--  <div class="pull-left">
+                  <!--  <div class="pull-left">
                     <a href="#" class="btn btn-default btn-flat">Perfil</a>
                   </div>-->
                   <div class="pull-right">
-                  <a class="btn btn-default btn-flat" href="{{ route('logout') }}" onclick="event.preventDefault();
+                    <a class="btn btn-default btn-flat" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                       {{ __('Salir') }}
                     </a>
@@ -229,7 +229,7 @@ desired effect
             </li>
             <!-- Control Sidebar Toggle Button -->
             <li>
-            <!--  <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>-->
+              <!--  <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>-->
             </li>
           </ul>
         </div>
@@ -242,9 +242,9 @@ desired effect
       <section class="sidebar">
 
         <!-- Sidebar user panel (optional) -->
-        <div class="user-panel">
+        <div class="user-panel" >
           <div class="pull-left image">
-            <img src="{{asset('dist/img/logo2.jpg')}}" class="img-circle" alt="User Image">
+            <img src="{{asset('dist/img/logoIni.jpg')}}" class="img-circle" alt="User Image">
           </div>
           <div class="pull-left info">
             <p>{{ Auth::user()->name }}</p>
@@ -267,16 +267,29 @@ desired effect
 
         <!-- Sidebar Menu -->
         <ul class="sidebar-menu" data-widget="tree">
-        
+
           <li class="header"></li>
           <!-- Optionally, you can add icons to the links -->
           <!--<li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
         <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>-->
+          <style type="text/css">
+         
+
+          li a{
+            color: #007723;
+
+          }
+
+          li a:hover{
+            color:black;
+          }
+          </style>
+
           <li class="treeview">
           <li><a href="{{url('consejo')}}"><i class="fa fa-university" aria-hidden="true"></i>Consejo</a></li>
           <li><a href="{{url('empleado')}}"><i class="fa fa-suitcase" aria-hidden="true"></i>Empleados</a></li>
           <li><a href="{{url('evento')}}"><i class="fa fa-calendar" aria-hidden="true"></i>Eventos</a></li>
-          <li><a href="{{url('factura')}}"><i class="fa fa-file-text" aria-hidden="true"></i>Facturación</a></li> 
+          <li><a href="{{url('factura')}}"><i class="fa fa-file-text" aria-hidden="true"></i>Facturación</a></li>
           <li><a href="{{url('habitante')}}"><i class="fa fa-group" aria-hidden="true"></i>Habitantes</a></li>
           <li><a href="{{url('mascota')}}"><i class="fa fa-paw" aria-hidden="true"></i>Mascotas</a></li>
           <li><a href="{{url('mercancia')}}"><i class="fa fa-truck" aria-hidden="true"></i>Mercancía</a></li>
@@ -295,7 +308,7 @@ desired effect
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->
-     <!-- <section class="content-header">
+      <!-- <section class="content-header">
         <h1>
        GESTIÓN RESIDENCIAL
         <small>CRUD</small>
@@ -313,21 +326,21 @@ desired effect
         | Your Page Content Here |
         -------------------------->
         @yield('contenido')
-        
+
       </section>
       <!-- /.content -->
-      
+
     </div>
     <!-- /.content-wrapper -->
-    
+
     <!-- Main Footer -->
-    <footer class="main-footer">
+    <footer class="main-footer" >
       <!-- To the right -->
-      <div class="pull-right hidden-xs">
+      <div class="pull-right hidden-xs" style="color: #007723;">
         CampoVerde
       </div>
       <!-- Default to the left -->
-      <strong>Copyright &copy; 2020 <a href="#">Company</a>.</strong> All rights reserved.
+      <strong>Copyright &copy; 2022 .</strong> Todos los derechos reservados por el grupo 711 TSI.
     </footer>
 
     <!-- Control Sidebar -->
@@ -356,7 +369,7 @@ desired effect
             </li>
           </ul>
           <!-- /.control-sidebar-menu -->
-          
+
 
           <h3 class="control-sidebar-heading">Tasks Progress</h3>
           <ul class="control-sidebar-menu">

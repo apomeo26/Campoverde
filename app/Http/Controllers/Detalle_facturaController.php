@@ -87,7 +87,7 @@ class Detalle_facturaController extends Controller
         if (strlen($id_habitante) == 0) {
 
             echo '<script type="text/javascript">
-            alert("Responsable no reguistrado");
+            alert("Responsable no registrado");
             window.location.href="multa/create";
                 </script>';
         } else {

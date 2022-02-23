@@ -25,7 +25,7 @@ class MultaEditRequest extends FormRequest
     {
         return [
             'documento'=>'required',
-            'documento'=>'min:10',
+            'documento'=>'min:8',
             'documento'=>'max:10',
             'multa'=>'required',
             'fecha'=>'required',

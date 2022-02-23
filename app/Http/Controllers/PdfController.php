@@ -43,6 +43,33 @@ class PdfController extends Controller
         return $pdf->download('Listado de Habitantes.pdf');
     }
 
+    public function imprimirConsejo(Request $request)
+    {
+        $request->user()->authorizeRoles('admin');
+
+        $habitantes = DB::table('habitantes')
+        ->join('detalle_habitantes','habitantes.id','=','detalle_habitantes.habitantes_id')
+        ->join('consejo','habitantes.id','=','consejo.habitantes_id')
+        ->join('apartamento', 'detalle_habitantes.apartamento_id', '=', 'apartamento.id')
+        ->select(
+            'habitantes.numero_identificacion',
+            'habitantes.nombre',
+            'habitantes.apellidos',
+            'habitantes.correo',
+            'habitantes.telefono_celular',
+            'detalle_habitantes.tipo_habitante',
+            'apartamento.bloque', 
+            'apartamento.numero_apartamento',
+            'consejo.cargo_consejo',
+            'consejo.fecha_inicio',
+            'consejo.fecha_final'
+            
+            )->get();
+        $pdf = \PDF::loadView('Pdf.consejoPdf', ['habitantes' => $habitantes]);
+        $pdf->setPaper('A4','landscape');
+        return $pdf->download('Consejo.pdf');
+    }
+
 
     public function imprimirFacturas (Request $request, $id)
     {

@@ -43,7 +43,7 @@
         <div class="form-group">
             <br>
             <label for="numero_identificacion">Documento del Visitante</label>
-            <input type="text" name="numero_identificacion" id="numero_identificacion" class="form-control" value="{{$visitantes->numero_identificacion}}" minlength="10" maxlength="10" pattern="[0-9]+" title="Solo Numeros" required>
+            <input type="text" name="numero_identificacion" id="numero_identificacion" class="form-control" value="{{$visitantes->numero_identificacion}}" minlength="8" maxlength="10" pattern="[0-9]+" title="Solo Numeros" required>
         </div>
     </div>
 

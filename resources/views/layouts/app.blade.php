@@ -23,7 +23,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ url('/') }}" style="color: #56B649;">
                    <!-- {{ config('app.name', 'Laravel') }}-->
                    CampoVerde
                 </a>
@@ -42,11 +42,11 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}"><button class="btn btn-success">Login</button></a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Registrarme') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}"><button class="btn btn-primary">Registrarme</button></a>
                                 </li>
                             @endif
                         @else

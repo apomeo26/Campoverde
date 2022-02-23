@@ -17,7 +17,7 @@
         <div class="table-responsive">
             <table class="table table-striped table-hover">
                 <thead>
-                    <th>Habitante</th>
+                    <th>Habitante - CC</th>
                     <th>Referencia</th>
                     <th>Descripción</th>
                     <th>Transportadora</th>
