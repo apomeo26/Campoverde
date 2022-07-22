@@ -52,7 +52,7 @@ class HabitantesController extends Controller
             ->orwhere('habitantes.nombre', 'LIKE', '%' . $query . '%')
             ->orwhere('habitantes.apellidos', 'LIKE', '%' . $query . '%')
             ->orwhere('habitantes.numero_identificacion', 'LIKE', '%' . $query . '%')
-            ->orderBy('habitantes.id', 'ASC')->paginate(4);
+            ->orderBy('habitantes.id', 'ASC')->paginate(5);
 
         return view('habitante.index', ["habitantes" => $habitantes, "searchText" => $query]);
     }

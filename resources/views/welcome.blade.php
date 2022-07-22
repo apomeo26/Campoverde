@@ -10,16 +10,23 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('bower_components/bootstrap/dist/css/bootstrap.min.css')}}">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <!-- Styles -->
     <style>
         html,
         body {
-            background-color: #fff;
-            color: #636b6f;
+
             font-family: 'Nunito', sans-serif;
-            font-weight: 200;
+
+        }
+
+        header {
             height: 100vh;
-            margin: 0;
+            background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
         }
 
         .full-height {
@@ -30,12 +37,12 @@
             align-items: center;
             display: flex;
             justify-content: center;
-            
+
         }
 
         .position-ref {
             position: relative;
-            
+
         }
 
         .top-right {
@@ -66,152 +73,117 @@
             margin-bottom: 30px;
         }
 
-       
+        .img-galeria {
+            width: 30%;
+            display: block;
+            margin-left: 20px;
+            margin-bottom: 15px;
+
+            cursor: pointer;
+        }
     </style>
 </head>
 
 <body>
 
+    <header class="header" id="inicio">
 
-    <div class="flex-center position-ref full-height">
 
-        @if (Route::has('login'))
-        <div class="top-right links">
-            @auth
-            <a href="{{ url('/home') }}"> <button>Home</button> </a>
-            @else
-            <a href="{{ route('login') }}"><button class="btn btn-success">Login</button></a>
+        <div class="flex-center position-ref full-height">
 
-            @if (Route::has('register'))
-            <a href="{{ route('register') }}"><button class="btn btn-primary">Registrarme</button></a>
+            @if (Route::has('login'))
+            <div class="top-right links">
+                @auth
+                <a href="{{ url('/home') }}"> <button>Home</button> </a>
+                @else
+                <a href="{{ route('login') }}"><button class="btn btn-success">Login</button></a>
+
+                @if (Route::has('register'))
+                <a href="{{ route('register') }}"><button class="btn btn-primary">Registrarme</button></a>
+                @endif
+                @endauth
+            </div>
             @endif
-            @endauth
+
+        <img src="{{asset('dist/img/principal.svg')}}" alt="" class="img-galeria">
+        <div>
+        <h1 class="titulo">CampoVerde</h1>
         </div>
-        @endif
+
+
+
+    </header>
+
+
+    <style type="text/css">
+       
+        .subtitulo {
+            text-align: center;
+            font-weight: 300;
+            color: #08549c;
+            margin-bottom: 40px;
+            font-size: 40px;
+        }
+
+        .titulo {
+            text-align: center;
+            font-weight: 300;
+            margin-bottom: 40px;
+            font-size: 60px;
+        }
+
+        .brand {
+            font-weight: 500;
+            font-size: 45px;
+            color: #56B649;
+            margin-left: 20px;
+        }
+
+
+
+        footer {
+            background: white;
+            padding-bottom: 0.1px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            padding-top: 60px;
+            padding-bottom: 40px;
+        }
+        .info-footer{
+
+            margin-right: 20px;
+        }
+
+        .footer-info{
+            flex-wrap: wrap;
+            height: 90px;
+            margin-left: 700px;
+        }
         
+    </style>
 
+    <footer id="contacto">
+        <div class="contenedor footer-content">
+            <div class="contacts-us">
+                <h2 class="brand">CAMPO VERDE</h2>
 
+            </div>
 
-        <style type="text/css">
-            #boton1 {
-                background: #fff;
-                float: left;
-                top: 450px;
-                position: absolute;
-                color: #56B649;
-                width: 30%;
-                font-weight: bold;
-                text-align: center;
-                font-size: 40px;
-                border-radius: 12px;
-                border: 2px solid #fff;
-                box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            }
-
-            #boton2 {
-                background: #4073FC;
-                float: left;
-                top: 550px;
-                margin-left: -400px;
-                position: absolute;
-                color: #fff;
-                width: 20%;
-                font-weight: bold;
-                text-align: center;
-                font-size: 20px;
-                border-radius: 12px;
-                border: 2px solid #4073FC;
-                box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            }
-
-            #boton3 {
-                background: #4073FC;
-                float: left;
-                top: 550px;
-                margin-left: 400px;
-                position: absolute;
-                color: #fff;
-                width: 20%;
-                font-weight: bold;
-                text-align: center;
-                font-size: 20px;
-                border-radius: 12px;
-                border: 2px solid #4073FC;
-                box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            }
-
-            #boton4 {
-                background: #4073FC;
-                float: left;
-                top: 610px;
-                margin-left: -400px;
-                position: absolute;
-                color: #fff;
-                width: 20%;
-                font-weight: bold;
-                text-align: center;
-                font-size: 20px;
-                border-radius: 12px;
-                border: 2px solid #4073FC;
-                box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            }
-
-            #boton5 {
-                background: #4073FC;
-                float: left;
-                top: 610px;
-                margin-left: 400px;
-                position: absolute;
-                color: #fff;
-                width: 20%;
-                font-weight: bold;
-                text-align: center;
-                font-size: 20px;
-                border-radius: 12px;
-                border: 2px solid #4073FC;
-                box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            }
-
-            #titulo {
-                margin-top: -585px;
-                position: absolute;
-                font-size: 30px;
-                margin-left: -1000px;
-                color: #56B649;
-                font-weight: bold;
-                
-            }
-        </style>
-       <img src="{{asset('dist/img/campoverde.jpeg')}}" height="50%" width="95%" style="border-radius: 20px; box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);border-top:#bdbdbd 5px solid; ">
-
-        <div id="boton1"> Bienvenidos</div>
-        <div id="boton2"><span class="glyphicon glyphicon-earphone"></span> (2) 123 4567</div>
-        <div id="boton3"> <span class="glyphicon glyphicon-map-marker"></span> Calle 50 #101-60</div>
-        <div id="boton4"> <span class="glyphicon glyphicon-envelope"></span> campoverde@gmail.com</div>
-        <div id="boton5"> <span class="glyphicon glyphicon-home"></span> Nosotros</div>
-        <div id="titulo">Campo Verde</div>
-
-
-        <div class="content">
-
-
-
-            <!-- <div class="title m-b-md">
-                CampoVerde 2.0
-            </div> -->
-
-            <!--  <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>-->
+            <img src="{{asset('dist/img/footer-info.svg')}}" alt="" class="footer-info">
+            <div class="contacto">
+                <h4 class="info-footer">(2) 123 4567</h4>
+                <h4 class="info-footer">Calle 50 #101-60</h4>
+                <h4 class="info-footer">campoverde@gmail.com</h4>
+            </div>
         </div>
-    </div>
+
+    </footer>
+
 </body>
 
 </html>

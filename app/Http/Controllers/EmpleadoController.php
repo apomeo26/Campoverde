@@ -28,7 +28,7 @@ class EmpleadoController extends Controller
             $empleados = Empleado::orwhere('nombre', 'LIKE', '%' . $query . '%')
             ->orwhere('apellidos', 'LIKE', '%' . $query . '%')
             ->orwhere('numero_identificacion', 'LIKE', '%' . $query . '%')
-                ->orderBy('id', 'ASC')->paginate(3);
+                ->orderBy('id', 'ASC')->paginate(6);
             return view('empleado.index', ["empleados" => $empleados, "searchText" => $query]);
         }
     }

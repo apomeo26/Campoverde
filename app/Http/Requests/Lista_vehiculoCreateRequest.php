@@ -25,7 +25,7 @@ class Lista_vehiculoCreateRequest extends FormRequest
     {
         return [
             'documento'=>'required',
-            'documento'=>'min:10',
+            'documento'=>'min:8',
             'tipoVehi'=>'required',
             'modeloVehi'=>'required',
             'placaVehi'=>'required',
