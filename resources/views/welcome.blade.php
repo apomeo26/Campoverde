@@ -19,6 +19,13 @@
             font-family: 'Nunito', sans-serif;
 
         }
+        *{
+            box-sizing: border-box;
+        }
+
+        .spread{
+            transform: translate(0);
+        }
 
         header {
             height: 100vh;
@@ -78,8 +85,6 @@
             display: block;
             margin-left: 20px;
             margin-bottom: 15px;
-
-            cursor: pointer;
         }
     </style>
 </head>
@@ -105,10 +110,11 @@
             </div>
             @endif
 
-        <img src="{{asset('dist/img/principal.svg')}}" alt="" class="img-galeria">
-        <div>
-        <h1 class="titulo">CampoVerde</h1>
-        </div>
+            <img src="{{asset('dist/img/princi.svg')}}" alt="" class="img-galeria">
+            <div>
+                <h1 class="titulo">CampoVerde</h1>
+
+            </div>
 
 
 
@@ -116,13 +122,13 @@
 
 
     <style type="text/css">
-       
         .subtitulo {
-            text-align: center;
+
             font-weight: 300;
-            color: #08549c;
+
             margin-bottom: 40px;
             font-size: 40px;
+            text-align: center;
         }
 
         .titulo {
@@ -135,14 +141,14 @@
         .brand {
             font-weight: 500;
             font-size: 45px;
-            color: #56B649;
-            margin-left: 20px;
+           
+            
         }
 
 
 
         footer {
-            background: white;
+            background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
             padding-bottom: 0.1px;
         }
 
@@ -154,27 +160,78 @@
             padding-top: 60px;
             padding-bottom: 40px;
         }
-        .info-footer{
+
+        .info-footer {
 
             margin-right: 20px;
         }
 
-        .footer-info{
+        .footer-info {
             flex-wrap: wrap;
             height: 90px;
             margin-left: 700px;
         }
-        
+
+        .contenedor {
+            width: 90%;
+            max-width: 1200px;
+            overflow: hidden;
+            margin: auto;
+            padding: 60px 0;
+        }
+
+        .informa {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .cont-informa {
+            width: 30%;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .cont-informa img {
+            width: 80%;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .n-informa {
+          text-align: center;
+            margin-top: 20px;
+            width: 100%;
+            font-weight: 400;
+        }
     </style>
+
+    <main>
+        <section class="contenedor" id="Info">
+            <h2 class="subtitulo">Conozca Más</h2>
+            <section class="informa">
+                <div class="cont-informa">
+                    <img src="{{asset('dist/img/datos.svg')}}" alt="">
+                    <h3 class="n-informa">Documentos legales</h3>
+                </div>
+                <div class="cont-expert">
+                    <img src="{{asset('dist/img/deporte.svg')}}" alt="">
+                    <h3 class="n-informa">Actividades de Bienestar</h3>
+                </div>
+            </section>
+        </section>
+
+    </main>
 
     <footer id="contacto">
         <div class="contenedor footer-content">
             <div class="contacts-us">
-                <h2 class="brand">CAMPO VERDE</h2>
+                <h2 class="brand">CampoVerde</h2>
 
             </div>
 
-            <img src="{{asset('dist/img/footer-info.svg')}}" alt="" class="footer-info">
+            
             <div class="contacto">
                 <h4 class="info-footer">(2) 123 4567</h4>
                 <h4 class="info-footer">Calle 50 #101-60</h4>

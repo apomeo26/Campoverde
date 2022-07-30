@@ -3,7 +3,7 @@
 <div class="container" >
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card border-success mb-3" style="box-shadow:10px 5px 5px #B8DABA">
+            <div class="card border-success mb-3" style="box-shadow: 0 0 6px rgba(0, 0, 0, .5); ">
             
                 <div class="card-header" ><a href="{{url('consejo')}}" style="color: #007723;">Consejo</a></div>
                 <div class="card-header"><a href="{{url('empleado')}}" style="color: #007723;">Empleados</a></div>
